@@ -69,10 +69,7 @@ task mobi(type: AsciidoctorTask, description: 'Generates MOBI') {
 pdf.shouldRunAfter html
 epub.shouldRunAfter pdf
 
-// task all(dependsOn: ['html', 'pdf', 'epub', 'mobi'])
-// todo: replace the line below with the one above after you've installed
-//       kindlegen and changed build.sh to point to it.
-task all(dependsOn: ['html', 'pdf', 'epub'])
+task all(dependsOn: ['html', 'pdf', 'epub', 'mobi'])
 
 defaultTasks 'all'
 

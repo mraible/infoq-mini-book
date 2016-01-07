@@ -4,7 +4,7 @@ This book is written in http://asciidoctor.org/[Asciidoctor]. It compiles to HTM
 
 == Building
 
-To convert the AsciiDoc to HTML, PDF, EPUB, and MOBI, run the following command:
+To convert this book to HTML, PDF, EPUB, and MOBI, install https://www.amazon.com/gp/feature.html?docId=1000765211[KindleGen], change `build.sh` to point to your installation, then run the following command:
 
 [source]
 ----
