@@ -1,0 +1,81 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
+        classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+        classpath 'org.jruby:jruby-complete:9.0.4.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'com.bluepapa32.watch'
+
+version = '1.0.0-SNAPSHOT'
+
+asciidoctorj {
+    version = '1.5.4'
+}
+
+import org.asciidoctor.gradle.AsciidoctorTask
+
+def attrs = ['sourcedir'         : '../../../main/webapp',
+             'source-highlighter': 'coderay',
+             'epub3-stylesdir'   : './styles/epub',
+             // NOTE don't include leading ./ because it messes up paths in the epub files
+             'imagesdir'         : 'images',
+             toc                 : 'left',
+             icons               : 'font',
+             linkattrs           : true,
+             encoding            : 'utf-8',
+             'setanchors'        : true,
+             'idprefix'          : '',
+             'idseparator'       : '-',
+             'docinfo1'          : 'true']
+
+tasks.withType(AsciidoctorTask) { task ->
+    attributes attrs
+    sources {
+        include 'index.adoc'
+    }
+}
+
+task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
+    backends 'html5'
+}
+
+task pdf(type: AsciidoctorTask, description: 'Generates PDF') {
+    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
+    backends 'pdf'
+}
+
+task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
+    backends 'epub3'
+}
+
+task mobi(type: AsciidoctorTask, description: 'Generates MOBI') {
+    backends 'epub3'
+    attrs.put('ebook-format', 'kf8')
+    attributes attrs
+}
+
+pdf.shouldRunAfter html
+epub.shouldRunAfter pdf
+
+task all(dependsOn: ['html', 'pdf', 'epub', 'mobi'])
+
+defaultTasks 'all'
+
+watch {
+    asciidoc {
+        files fileTree(dir: 'src/docs/asciidoc', include: '**/*.adoc')
+        tasks 'html'
+    }
+}

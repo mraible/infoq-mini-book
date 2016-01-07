@@ -1,0 +1,15 @@
+{
+  "name": "infoq-mini-book",
+  "version": "1.0.0",
+  "description": "InfoQ Mini-Book",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:mraible/infoq-mini-book.git"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-browser-sync": "2.2.0",
+    "load-grunt-tasks": "3.4.0",
+    "grunt-contrib-watch": "0.6.1"
+  }
+}

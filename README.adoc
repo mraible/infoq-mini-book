@@ -1,0 +1,17 @@
+= An InfoQ Mini-Book
+
+A book written in AsciiDoc that compiles to HTML, PDF, EPUB, and MOBI using the Asciidoctor Gradle plugin.
+
+== Usage
+
+Convert the AsciiDoc to HTML, PDF, & epub3 by running Gradle:
+
+ $ ./gradlew
+
+Open the file _build/asciidoc/html5/index.html_ in your browser to see the generated HTML file.
+
+Open the file _build/asciidoc/pdf/index.pdf_ in your browser to see the generated PDF file.
+
+Open the file _build/asciidoc/epub3/index.epub_  in your browser to see the generated epub file.
+
+Open the file _build/asciidoc/epub3/index.mobi_  in your browser to see the generated epub file.

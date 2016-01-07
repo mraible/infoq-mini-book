@@ -1,0 +1,86 @@
+= Preface
+
+Why did you write this book?
+
+== What is in an InfoQ mini-book?
+
+InfoQ mini-books are designed to be concise, intending to serve technical architects looking to get a firm conceptual understanding of a new technology or technique in a quick yet in-depth fashion. You can think of these books as covering a topic strategically or essentially. After reading a mini-book, the reader should have a fundamental understanding of a technology, including when and where to apply it, how it relates to other technologies, and an overall feeling that they have assimilated the combined knowledge of other professionals who have already figured out what this technology is about. The reader will then be able to make intelligent decisions about the technology once their projects require it, and can delve into sources of more detailed information (such as larger books or tutorials) at that time.
+
+== Who this book is for
+
+== What you need for this book
+
+To try code samples in this book, you will need a computer running an up-to-date operating system (Windows, Linux, or Mac OS X). You will need Node.js and Java installed. The book code was tested against Node.js v0.12 and JDK 8, but newer versions should also work.
+
+== Conventions
+
+*[red]#TODO: Replace the code examples below with code examples from this book.#*
+
+We use a number of typographical conventions within this book that distinguish between different kinds of information.
+
+Code in the text, including commands, variables, file names, CSS class names, and property names are shown as follows:
+"Spring Boot uses a `public static void main` entry-point that launches an embedded web server for you."
+
+A block of code is set out as follows. It may be colored, depending on the format in which you're reading this book.
+
+[source,html]
+.src/main/webapp/form.html
+----
+<form ng-submit="search()">
+    <input type="search" name="search" ng-model="term">
+    <button>Search</button>
+</form>
+----
+
+[source,java]
+.src/main/java/demo/DemoApplication.java
+----
+@RestController
+class BlogController {
+
+    @RequestMapping("/blogs")
+    Collection<Blog> list() {
+        return repository.findAll();
+    }
+
+    @Autowired
+    BlogRepository repository;
+}
+----
+
+When we want to draw your attention to a particular part of the code, it's called out with numbers.
+
+[source,javascript]
+----
+.controller('SearchController', function ($scope, SearchService) { <1>
+    $scope.search = function () { <2>
+        console.log("Search term is: " + $scope.term); <3>
+        SearchService.query($scope.term).then(function (response) {
+            $scope.searchResults = response.data;
+        });
+    };
+})
+----
+<1> To inject `SearchService` into `SearchController`, simply add it as a parameter to the controller's argument list.
+<2> `$scope.search()` is a function that's called from the HTML's `<form>`, wired up using the `ng-submit` directive.
+<3> `$scope.term` is a variable that's wired to `<input>` using the `ng-model` directive.
+
+TIP: Tips are shown using callouts like this.
+
+WARNING: Warnings are shown using callouts like this.
+
+.Sidebar
+****
+Additional information about some topics may be displayed using a sidebar like this.
+****
+
+Finally, this text shows what a quote looks like.
+
+"In the end, it's not the years in your life that count. It's the life in your years."
+-- Abraham Lincoln
+
+== Reader feedback
+
+We always welcome feedback from our readers. Let us know what you think about this book — what you liked or disliked. Reader feedback helps us develop titles that you get the most out of. To send us feedback, e-mail us at feedback@infoq.com. 
+
+If you have a topic that you have expertise in and you are interested in either writing or contributing to a book, please take a look at our mini-book guidelines at http://www.infoq.com/minibook-guidelines.

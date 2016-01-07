@@ -1,0 +1,51 @@
+// todo: replace the title, author, email, subject, keywords and cover.png
+:title: My InfoQ Mini-Book
+:author: InfoQ Author
+:email:  feedback@infoq.com
+:revnumber: 1.0
+:revdate:   {docdate}
+:subject: JHipster
+:keywords: AngularJS, Bootstrap, Spring Boot
+:doctype: book
+:front-cover-image: image:cover.png[Front Cover,1050,1600]
+:toc:
+:icons: font
+:lang: en
+:language: javadocript
+:experimental: true
+:pagenums:
+:pdf-fontsdir: ./styles/pdf/fonts
+:pdf-stylesdir: ./styles/pdf
+:pdf-style: infoq
+ifndef::ebook-format[:leveloffset: 1]
+= {title}
+
+[colophon]
+include::chapters/colophon.adoc[]
+
+[dedication]
+include::chapters/dedication.adoc[]
+
+include::chapters/acknowledgements.adoc[]
+
+[preface]
+include::chapters/preface.adoc[]
+
+include::chapters/introduction.adoc[]
+
+include::chapters/chapter1.adoc[]
+
+include::chapters/chapter2.adoc[]
+
+include::chapters/chapter3.adoc[]
+
+include::chapters/action.adoc[]
+
+include::chapters/about.adoc[]
+
+
+ifdef::backend-docbook[]
+[index]
+Index
+-----
+endif::backend-docbook[]
