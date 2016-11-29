@@ -19,7 +19,9 @@ To try code samples in this book, you will need a computer running an up-to-date
 We use a number of typographical conventions within this book that distinguish between different kinds of information.
 
 Code in the text, including commands, variables, file names, CSS class names, and property names are shown as follows:
-"Spring Boot uses a `public static void main` entry-point that launches an embedded web server for you."
+
+[example]
+Spring Boot uses a `public static void main` entry-point that launches an embedded web server for you.
 
 A block of code is set out as follows. It may be colored, depending on the format in which you're reading this book.
 
@@ -48,7 +50,7 @@ class BlogController {
 }
 ----
 
-When we want to draw your attention to a particular part of the code, it's called out with numbers.
+When we want to draw your attention to certain lines of code, those lines are annotated using numbers accompanied by brief descriptions.
 
 [source,javascript]
 ----
@@ -71,7 +73,7 @@ WARNING: Warnings are shown using callouts like this.
 
 .Sidebar
 ****
-Additional information about some topics may be displayed using a sidebar like this.
+Additional information about a certain topic may be displayed using a sidebar like this one.
 ****
 
 Finally, this text shows what a quote looks like.
@@ -81,6 +83,8 @@ Finally, this text shows what a quote looks like.
 
 == Reader feedback
 
-We always welcome feedback from our readers. Let us know what you think about this book — what you liked or disliked. Reader feedback helps us develop titles that you get the most out of. To send us feedback, e-mail us at feedback@infoq.com. 
+We always welcome feedback from our readers. Let us know what you thought about this book — what you liked or disliked. Reader feedback helps us develop titles that deliver the most value to you.
 
-If you have a topic that you have expertise in and you are interested in either writing or contributing to a book, please take a look at our mini-book guidelines at http://www.infoq.com/minibook-guidelines.
+To send us feedback, e-mail us at feedback@infoq.com, send a tweet to https://twitter.com/jhipster_book[@jhipster_book], or post a question on Stack Overflow using the "`jhipster`" tag.
+
+If there is a topic in which you have expertise and you are interested in either writing or contributing to a book, please take a look at our mini-book guidelines at http://www.infoq.com/minibook-guidelines.

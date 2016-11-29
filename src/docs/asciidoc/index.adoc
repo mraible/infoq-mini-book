@@ -3,29 +3,33 @@
 :author: InfoQ Author
 :email:  feedback@infoq.com
 :revnumber: 1.0
-:revdate:   {docdate}
+:revdate: {docdate}
+:revyear: 2016
 :subject: JHipster
 :keywords: AngularJS, Bootstrap, Spring Boot
 :doctype: book
+:media: screen
+ifeval::["{media}" != "prepress"]
 :front-cover-image: image:cover.png[Front Cover,1050,1600]
+endif::[]
 :toc:
 :icons: font
 :lang: en
 :language: javadocript
-:experimental: true
-:pagenums:
+:experimental:
 :pdf-fontsdir: ./styles/pdf/fonts
 :pdf-stylesdir: ./styles/pdf
-:pdf-style: infoq
+:pdf-style: infoq-screen
 ifndef::ebook-format[:leveloffset: 1]
 = {title}
 
-[colophon]
+[colophon#colophon%nonfacing]
 include::chapters/colophon.adoc[]
 
 [dedication]
 include::chapters/dedication.adoc[]
 
+[%nonfacing]
 include::chapters/acknowledgements.adoc[]
 
 [preface]
@@ -43,9 +47,7 @@ include::chapters/action.adoc[]
 
 include::chapters/about.adoc[]
 
-
-ifdef::backend-docbook[]
-[index]
-Index
------
-endif::backend-docbook[]
+//ifdef::backend-pdf,backend-docbook[]
+//[index]
+//== Index
+//endif::[]s
