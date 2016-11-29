@@ -49,9 +49,29 @@ local.properties
 *.orig
 
 ######################
+# Maven
+######################
+/log/**
+/target/**
+
+######################
 # Gradle
 ######################
 .gradle/**
+
+######################
+# Ruby
+######################
+/.bundle/
+/Gemfile.lock
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
 
 ######################
 # Windows
@@ -66,6 +86,7 @@ Desktop.ini
 # Mac OSX
 ######################
 .DS_Store
+.svn
 
 # Thumbnails
 ._*
@@ -77,6 +98,7 @@ Desktop.ini
 ######################
 # Directories
 ######################
+/asciidoctor-pdf/
 /build/**
 /bin/**
 /deploy/**

@@ -4,12 +4,12 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
         classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
-        classpath 'org.jruby:jruby-complete:9.0.4.0'
+        classpath 'org.jruby:jruby-complete:9.1.2.0'
     }
 }
 
@@ -18,10 +18,10 @@ apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'com.bluepapa32.watch'
 
-version = '1.0.0-SNAPSHOT'
+version = '2.0.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.5.4'
+    version = '1.5.4.1'
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask
@@ -31,14 +31,11 @@ def attrs = ['sourcedir'         : '../../../main/webapp',
              'epub3-stylesdir'   : './styles/epub',
              // NOTE don't include leading ./ because it messes up paths in the epub files
              'imagesdir'         : 'images',
-             toc                 : 'left',
-             icons               : 'font',
-             linkattrs           : true,
-             encoding            : 'utf-8',
-             'setanchors'        : true,
+             'toc'               : 'left',
+             'icons'             : 'font',
+             'sectanchors'       : '',
              'idprefix'          : '',
-             'idseparator'       : '-',
-             'docinfo1'          : 'true']
+             'idseparator'       : '-']
 
 tasks.withType(AsciidoctorTask) { task ->
     attributes attrs
@@ -51,7 +48,18 @@ task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
     backends 'html5'
 }
 
+// NOTE please use ./generate-pdf.sh instead of this task for now
+task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
+    attributes attrs + ['media' : 'prepress', 'pdfmarks': '', 'pdf-theme': 'infoq-prepress']
+    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
+    backends 'pdf'
+    outputDir "$buildDir/asciidoc/pdf-prepress"
+    separateOutputDirs false
+}
+
+// NOTE please use ./generate-pdf.sh screen instead of this task for now
 task pdf(type: AsciidoctorTask, description: 'Generates PDF') {
+    attributes attrs + ['pdfmarks': '']
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     backends 'pdf'
 }
@@ -69,13 +77,14 @@ task mobi(type: AsciidoctorTask, description: 'Generates MOBI') {
 pdf.shouldRunAfter html
 epub.shouldRunAfter pdf
 
-task all(dependsOn: ['html', 'pdf', 'epub', 'mobi'])
+//task all(dependsOn: ['html', 'pdf', 'epub', 'mobi'])
+task all(dependsOn: ['html', 'epub', 'mobi'])
 
 defaultTasks 'all'
 
 watch {
     asciidoc {
         files fileTree(dir: 'src/docs/asciidoc', include: '**/*.adoc')
-        tasks 'html'
+        tasks 'asciidoctor'
     }
 }
