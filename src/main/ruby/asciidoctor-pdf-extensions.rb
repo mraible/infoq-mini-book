@@ -45,7 +45,7 @@ module AsciidoctorPdfExtensions
         move_down 460
       end
       layout_heading title, size: @theme.base_font_size
-    elsif sect_id.include? 'jhipster' # chapters
+    elsif sect_id.include? 'chapter' # chapters
       #puts 'Processing ' + sect_id + '...'
       # use Akkurat font for all custom headings
       font 'Akkurat' do
@@ -58,9 +58,9 @@ module AsciidoctorPdfExtensions
         move_up 40
 
         part_number = 'ONE'
-        if sect_id.include? 'ui-components'
+        if sect_id.include? 'chapter-2'
           part_number = 'TWO'
-        elsif sect_id.include? 'api'
+        elsif sect_id.include? 'chapter-3'
           part_number = 'THREE'
         end
 
