@@ -15,5 +15,3 @@ Cover and Interior Design: Dragos Balasoiu
 
 Library of Congress Cataloguing-in-Publication Data:
 ISBN: XXX-X-XXX-XXXXX-X
-
-*[red]#TODO: Get an ISBN number from InfoQ.#*

@@ -4,7 +4,7 @@
 :email:  feedback@infoq.com
 :revnumber: 1.0
 :revdate: {docdate}
-:revyear: 2016
+:revyear: 2017
 :subject: JHipster
 :keywords: AngularJS, Bootstrap, Spring Boot
 :doctype: book
