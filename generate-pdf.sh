@@ -11,6 +11,11 @@ if [ ! -d .bundle/gems ]; then
   bundle --path=.bundle/gems --binstubs=.bundle/.bin
 fi
 
+if [ -f "$rvm_path/scripts/rvm" ] && [ -f ".ruby-version" ] && [ -f ".ruby-gemset" ]; then
+  source "$rvm_path/scripts/rvm"
+  rvm use `cat .ruby-version`@`cat .ruby-gemset`
+fi
+
 ASCIIDOCTOR_PDF="./.bundle/.bin/asciidoctor-pdf"
 OPTIMIZE_PDF="`bundle exec gem contents --show-install-dir asciidoctor-pdf`/bin/optimize-pdf"
 

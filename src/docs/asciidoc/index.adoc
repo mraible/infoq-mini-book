@@ -6,7 +6,7 @@
 :revdate: {docdate}
 :revyear: 2017
 :subject: JHipster
-:keywords: AngularJS, Bootstrap, Spring Boot
+:keywords: Angular, Bootstrap, Spring Boot
 :doctype: book
 :media: screen
 ifeval::["{media}" != "prepress"]

@@ -1,6 +1,6 @@
 {
   "name": "infoq-mini-book",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "description": "InfoQ Mini-Book",
   "repository": {
     "type": "git",
@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "gulp": "3.9.1",
-    "browser-sync": "2.15.0"
+    "browser-sync": "2.18.13"
   }
 }
