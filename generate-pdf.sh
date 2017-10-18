@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: `./generate-pdf.sh` to generate printable 6x9" PDF
+# Usage: `./generate-pdf.sh` to generate a printable 6x9" PDF with no syntax highlighting
 #        `./generate-pdf.sh screen` to generate a downloadable 8.5x11" PDF
 
 source $HOME/.rvm/scripts/rvm
@@ -21,8 +21,10 @@ OPTIMIZE_PDF="`bundle exec gem contents --show-install-dir asciidoctor-pdf`/bin/
 
 ROOT_DIR=$(realpath $(dirname $0))
 MEDIA=prepress
+HIGHLIGHTING=""
 if [ ! -z "$1" ]; then
   MEDIA=$1
+  HIGHLIGHTING="-a source-highlighter=coderay"
 fi
 BASE_DIR="$ROOT_DIR/src/docs/asciidoc"
 OUT_DIR="$ROOT_DIR/build/asciidoc/pdf-$MEDIA"
@@ -37,7 +39,7 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -a pdf-stylesdir="$BASE_DIR/styles/pdf" \
   -a pdf-fontsdir="$BASE_DIR/styles/pdf/fonts" \
   -a sourcedir=../../../main/webapp \
-  -a source-highlighter=coderay \
+  $HIGHLIGHTING \
   -a imagesdir=images \
   -a toc \
   -a icons=font \

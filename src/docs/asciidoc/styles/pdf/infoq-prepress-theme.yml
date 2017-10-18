@@ -73,10 +73,10 @@ horizontal_rhythm: $base_line_height_length
 # QUESTION should vertical_spacing be block_spacing instead?
 vertical_spacing: $vertical_rhythm
 link:
-  font_color: 428bca
+  font_color: 333333 #428bca
 # literal is currently used for inline monospaced in prose and table cells
 literal:
-  font_color: b12146
+  font_color: 333333 #b12146
   font_family: M+ 1mn
 heading:
   #font_color: 181818
@@ -128,7 +128,7 @@ lead:
   font_size: $base_font_size_large
   line_height: 1.4
 abstract:
-  font_color: 5c6266
+  font_color: 333333 #5c6266
   font_size: $lead_font_size
   line_height: $lead_line_height
   font_style: italic
@@ -143,7 +143,7 @@ blockquote:
   border_width: 3.5
   padding: [$vertical_rhythm / 2, $horizontal_rhythm, $vertical_rhythm / -2, $horizontal_rhythm + $blockquote_border_width / 2]
   cite_font_size: $base_font_size_small
-  cite_font_color: 999999
+  cite_font_color: 333333 #999999
 # code is used for source blocks (perhaps change to source or listing?)
 code:
   font_color: $base_font_color
@@ -151,10 +151,10 @@ code:
   font_size: 8
   padding: $code_font_size
   line_height: 1.25
-  background_color: f5f5f5
+  background_color: ffffff
   border_color: cccccc
   border_radius: $base_border_radius
-  border_width: 0.5
+  border_width: 0
 conum:
   font_family: M+ 1mn
   font_color: $literal_font_color
@@ -173,7 +173,7 @@ prose:
   margin_top: 0
   margin_bottom: $vertical_rhythm
 sidebar:
-  border_color: $page_background_color
+  border_color: B8B8B8 #$page_background_color
   border_radius: $base_border_radius
   border_width: $base_border_width
   background_color: eeeeee
@@ -218,7 +218,7 @@ toc:
   indent: $horizontal_rhythm
   line_height: 1.4
 header:
-  font_color: A6A6A6
+  font_color: 999999 #A6A6A6
   height: 0.5in
   line_height: 1
   columns: =100%

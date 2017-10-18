@@ -26,11 +26,11 @@ Spring Boot uses a `public static void main` entry-point that launches an embedd
 A block of code is set out as follows. It may be colored, depending on the format in which you're reading this book.
 
 [source,html]
-.src/main/webapp/form.html
+.src/app/search/search.component.html
 ----
-<form ng-submit="search()">
-    <input type="search" name="search" ng-model="term">
-    <button>Search</button>
+<form>
+  <input type="search" name="query" [(ngModel)]="query" (keyup.enter)="search()">
+  <button type="button" (click)="search()">Search</button>
 </form>
 ----
 
@@ -39,14 +39,17 @@ A block of code is set out as follows. It may be colored, depending on the forma
 ----
 @RestController
 class BlogController {
+    private final BlogRepository repository;
+
+    // Yay! No annotations needed for constructor injection in Spring 4.3+.
+    public BlogController(BlogRepository repository) {
+        this.repository = repository;
+    }
 
     @RequestMapping("/blogs")
     Collection<Blog> list() {
         return repository.findAll();
     }
-
-    @Autowired
-    BlogRepository repository;
 }
 ----
 
@@ -54,18 +57,21 @@ When we want to draw your attention to certain lines of code, those lines are an
 
 [source,javascript]
 ----
-.controller('SearchController', function ($scope, SearchService) { <1>
-    $scope.search = function () { <2>
-        console.log("Search term is: " + $scope.term); <3>
-        SearchService.query($scope.term).then(function (response) {
-            $scope.searchResults = response.data;
-        });
-    };
-})
+export class SearchComponent {
+  constructor(private searchService: SearchService) {} <1>
+
+  search(): void { <2>
+    this.searchService.search(this.query).subscribe( <3>
+      data => { this.searchResults = data; },
+      error => console.log(error)
+    );
+  }
+}
 ----
-<1> To inject `SearchService` into `SearchController`, simply add it as a parameter to the controller's argument list.
-<2> `$scope.search()` is a function that's called from the HTML's `<form>`, wired up using the `ng-submit` directive.
-<3> `$scope.term` is a variable that's wired to `<input>` using the `ng-model` directive.
+<1> To inject `SearchService` into `SearchComponent`, add it as a parameter to the constructors's argument list.
+<2> `search()` is a method that's called from the HTML's `<button>`, wired up using the `(click)` event handler.
+<3> `this.query` is a variable that's wired to `<input>` using two-way binding with `[(ngModel)]="query"`.
+
 
 TIP: Tips are shown using callouts like this.
 
@@ -73,10 +79,10 @@ WARNING: Warnings are shown using callouts like this.
 
 .Sidebar
 ****
-Additional information about a certain topic may be displayed using a sidebar like this one.
+Additional information about a certain topic may be displayed in a sidebar like this one.
 ****
 
-Finally, this text shows what a quote looks like.
+Finally, this text shows what a quote looks like:
 
 "In the end, it's not the years in your life that count. It's the life in your years."
 -- Abraham Lincoln
@@ -85,6 +91,6 @@ Finally, this text shows what a quote looks like.
 
 We always welcome feedback from our readers. Let us know what you thought about this book — what you liked or disliked. Reader feedback helps us develop titles that deliver the most value to you.
 
-To send us feedback, e-mail us at feedback@infoq.com, send a tweet to https://twitter.com/jhipster_book[@jhipster_book], or post a question on Stack Overflow using the "`jhipster`" tag.
+To send us feedback, e-mail us at feedback@infoq.com, send a tweet to @jhipster_book, or post a question on Stack Overflow using the "`jhipster`" tag.
 
-If there is a topic in which you have expertise and you are interested in either writing or contributing to a book, please take a look at our mini-book guidelines at http://www.infoq.com/minibook-guidelines.
+If you're interested in writing a mini-book for InfoQ, see http://www.infoq.com/minibook-guidelines.
