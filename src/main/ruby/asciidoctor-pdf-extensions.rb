@@ -54,7 +54,11 @@ module AsciidoctorPdfExtensions
         else
           move_down 180
         end
-        layout_heading 'PART', align: :right, size: 100, color: [91, 54, 8, 13], style: :normal
+        if @ppbook
+          layout_heading 'PART', align: :right, size: 100, style: :normal
+        else
+          layout_heading 'PART', align: :right, size: 100, color: [91, 54, 8, 13], style: :normal
+        end
         move_up 40
 
         part_number = 'ONE'
@@ -63,9 +67,13 @@ module AsciidoctorPdfExtensions
         elsif sect_id.include? 'chapter-3'
           part_number = 'THREE'
         end
-
-        layout_heading part_number, align: :right, size: 100, color: [42, 1, 83, 1], style: :bold
-        layout_heading title, align: :right, color: [42, 1, 83, 1], style: :normal, size: 30
+        if @ppbook
+          layout_heading part_number, align: :right, size: 100, style: :bold
+          layout_heading title, align: :right, style: :normal, size: 30
+        else
+          layout_heading part_number, align: :right, size: 100, color: [42, 1, 83, 1], style: :bold
+          layout_heading title, align: :right, color: [42, 1, 83, 1], style: :normal, size: 30
+        end
       end
 
       bounds.move_past_bottom
