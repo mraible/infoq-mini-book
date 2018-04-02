@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-KINDLEGEN=/opt/tools/kindlegen/kindlegen ./gradlew clean all --stacktrace
+export KINDLEGEN="`pwd`/build/kindlegen/kindlegen"
+./gradlew clean all --stacktrace
