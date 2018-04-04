@@ -29,6 +29,18 @@ $ generate-pdf.sh screen
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
 * Open _build/asciidoc/epub3/index.mobi_ in http://calibre-ebook.com/[Calibre] to see the generated MOBI file.
 
+[NOTE]
+====
+To be able to generate the PDF, you need have some dependencies installed.
+
+On macOS, run the following commands:
+
+. `rvm install "ruby-2.3.1"`
+. `gem install bundler -v '< 2'`
+. `bundle install`
+. `brew install gs`
+====
+
 == Sweet Authoring Experience
 
 If you'd like a very pleasant authoring experience, the project provides build files that make it possible. First of all,
