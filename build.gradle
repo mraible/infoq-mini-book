@@ -13,6 +13,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "de.undercouch.download" version "3.4.2"
+}
+
 apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
@@ -25,6 +29,7 @@ asciidoctorj {
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask
+import org.gradle.internal.os.OperatingSystem
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
              'source-highlighter': 'coderay',
@@ -75,6 +80,28 @@ task mobi(type: AsciidoctorTask, description: 'Generates MOBI') {
     attributes attrs
 }
 
+task downloadKindlegen(type: Download) {
+    ext.output = file("$buildDir/kindlegen/kindlegen" + (OperatingSystem.current().isMacOsX() ? '.zip' : '.tgz'))
+    src OperatingSystem.current().isMacOsX() ? 'https://kindlegen.s3.amazonaws.com/KindleGen_Mac_i386_v2_9.zip' : 'http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz'
+    dest output
+    overwrite false
+    onlyIfModified true
+}
+
+task extractKindlegen(type: Copy) {
+  dependsOn downloadKindlegen
+  from {
+    if (downloadKindlegen.output.name.endsWith('.zip')) {
+      zipTree(downloadKindlegen.output)
+    }
+    else {
+      tarTree(downloadKindlegen.output)
+    }
+  }
+  into "$buildDir/kindlegen/"
+}
+
+mobi.dependsOn extractKindlegen
 pdf.shouldRunAfter html
 epub.shouldRunAfter pdf
 
