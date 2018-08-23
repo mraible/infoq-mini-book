@@ -25,7 +25,7 @@ apply plugin: 'com.bluepapa32.watch'
 version = '4.1.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.5.6'
+    version = '1.5.7'
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask
