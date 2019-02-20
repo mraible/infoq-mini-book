@@ -24,8 +24,14 @@ font:
       bold: mplus1p-regular-fallback.ttf
       italic: mplus1p-regular-fallback.ttf
       bold_italic: mplus1p-regular-fallback.ttf
+    Emoji:
+      normal: OpenSansEmoji.ttf
+      bold: OpenSansEmoji.ttf
+      italic: OpenSansEmoji.ttf
+      bold_italic: OpenSansEmoji.ttf
   fallbacks:
     - M+ 1p Fallback
+    - Emoji
 page:
   background_color: ffffff
   layout: portrait

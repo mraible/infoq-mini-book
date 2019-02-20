@@ -1,7 +1,7 @@
-// todo: replace the title, author, email, subject, keywords and cover.png
-:title: My InfoQ Mini-Book
-:author: InfoQ Author
-:email:  feedback@infoq.com
+= My InfoQ Mini-Book
+:book-title: {doctitle}
+:author: Your Name
+:email:  youremail@infoq.com
 :revnumber: 1.0
 :revdate: {docdate}
 :revyear: 2018
@@ -21,7 +21,6 @@ endif::[]
 :pdf-stylesdir: ./styles/pdf
 :pdf-style: infoq-screen
 ifndef::ebook-format[:leveloffset: 1]
-= {title}
 
 [colophon#colophon%nonfacing]
 include::chapters/colophon.adoc[]
