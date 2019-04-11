@@ -10,7 +10,9 @@
 :doctype: book
 :media: screen
 ifeval::["{media}" != "prepress"]
-:front-cover-image: image:cover.png[Front Cover,1050,1600]
+:coverfilesuffix: .png
+ifdef::backend-pdf[:coverfilesuffix: .jpg]
+:front-cover-image: image:cover{coverfilesuffix}[Front Cover,1050,1600]
 endif::[]
 :toc:
 :icons: font
