@@ -16,8 +16,8 @@ if [ -f "$rvm_path/scripts/rvm" ] && [ -f ".ruby-version" ] && [ -f ".ruby-gemse
   rvm use `cat .ruby-version`@`cat .ruby-gemset`
 fi
 
-ASCIIDOCTOR_PDF="./.bundle/.bin/asciidoctor-pdf"
-OPTIMIZE_PDF="`bundle exec gem contents --show-install-dir asciidoctor-pdf`/bin/optimize-pdf"
+ASCIIDOCTOR_PDF=./.bundle/.bin/asciidoctor-pdf
+HEXAPDF=./.bundle/.bin/hexapdf
 
 ROOT_DIR=$(realpath $(dirname $0))
 MEDIA=prepress
@@ -52,5 +52,4 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -a attribute-missing=warn \
   "$BASE_DIR/index.adoc"
 
-$OPTIMIZE_PDF "$OUT_DIR/index.pdf"
-mv -f "$OUT_DIR/index-optimized.pdf" "$OUT_DIR/index.pdf"
+$HEXAPDF optimize --force "$OUT_DIR/index.pdf" "$OUT_DIR/index.pdf"
