@@ -32,7 +32,7 @@ import org.asciidoctor.gradle.AsciidoctorTask
 import org.gradle.internal.os.OperatingSystem
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
-             'source-highlighter': 'coderay',
+             'source-highlighter': 'rouge',
              'epub3-stylesdir'   : './styles/epub',
              // NOTE don't include leading ./ because it messes up paths in the epub files
              'imagesdir'         : 'images',
