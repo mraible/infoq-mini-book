@@ -33,11 +33,14 @@ $ generate-pdf.sh screen
 ====
 To be able to generate the PDF, you need have some dependencies installed.
 
-On macOS, run the following commands:
+First, install https://rvm.io/rvm/install#basic-install[RVM] to manage your Ruby installation(s).
+Once RVM is installed and loaded, run the following commands:
 
-. `rvm install "ruby-2.3.1"`
-. `gem install bundler -v '< 2'`
-. `bundle install`
+. `rvm install 2.6`
+. `rvm use 2.6`
+. `gem install bundler`
+
+The `generate-pdf.sh` script will then use Bundler to install the dependencies it needs.
 ====
 
 == Sweet Authoring Experience

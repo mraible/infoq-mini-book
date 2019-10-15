@@ -2,18 +2,14 @@
 # Usage: `./generate-pdf.sh` to generate a printable 6x9" PDF with no syntax highlighting
 #        `./generate-pdf.sh screen` to generate a downloadable 8.5x11" PDF
 
-source $HOME/.rvm/scripts/rvm
-
-rvm use 2.3.1 --quiet
-if [ ! -d .bundle/gems ]; then
-  rm -f Gemfile.lock
-  bundle config --local github.https true
-  bundle --path=.bundle/gems --binstubs=.bundle/.bin
+if [ -z `command -v bundle` ]; then
+  echo Please install the bundler gem.
+  exit 1
 fi
 
-if [ -f "$rvm_path/scripts/rvm" ] && [ -f ".ruby-version" ] && [ -f ".ruby-gemset" ]; then
-  source "$rvm_path/scripts/rvm"
-  rvm use `cat .ruby-version`@`cat .ruby-gemset`
+if [ ! -d .bundle/gems ]; then
+  rm -f Gemfile.lock
+  bundle --path=.bundle/gems --binstubs=.bundle/.bin
 fi
 
 ASCIIDOCTOR_PDF=./.bundle/.bin/asciidoctor-pdf
