@@ -24,7 +24,7 @@ MEDIA=prepress
 HIGHLIGHTING=""
 if [ ! -z "$1" ]; then
   MEDIA=$1
-  HIGHLIGHTING="-a source-highlighter=coderay"
+  HIGHLIGHTING="-a source-highlighter=rouge"
 fi
 BASE_DIR="$ROOT_DIR/src/docs/asciidoc"
 OUT_DIR="$ROOT_DIR/build/asciidoc/pdf-$MEDIA"
