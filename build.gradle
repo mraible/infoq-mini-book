@@ -6,15 +6,15 @@ buildscript {
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
         classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
-        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.7'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16'
-        classpath 'org.jruby:jruby-complete:9.1.12.0'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.5'
+        classpath 'org.jruby:jruby-complete:9.2.8.0'
     }
 }
 
 plugins {
-    id "de.undercouch.download" version "3.4.2"
+    id 'de.undercouch.download' version '3.4.2'
 }
 
 apply plugin: 'java'
@@ -25,14 +25,14 @@ apply plugin: 'com.bluepapa32.watch'
 version = '4.1.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '1.5.7'
+    version = '2.1.0'
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask
 import org.gradle.internal.os.OperatingSystem
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
-             'source-highlighter': 'coderay',
+             'source-highlighter': 'rouge',
              'epub3-stylesdir'   : './styles/epub',
              // NOTE don't include leading ./ because it messes up paths in the epub files
              'imagesdir'         : 'images',
@@ -65,7 +65,7 @@ task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress pr
 
 // NOTE please use ./generate-pdf.sh screen instead of this task for now
 task pdf(type: AsciidoctorTask, description: 'Generates PDF') {
-    attributes attrs + ['pdfmarks': '']
+    attributes attrs + ['pdfmarks': '', 'source-highlighter': 'rouge']
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     backends 'pdf'
 }
