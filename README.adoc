@@ -25,7 +25,7 @@ $ generate-pdf.sh screen
 
 * Open _build/asciidoc/html5/index.html_ in your browser to see the generated HTML file.
 * Open _build/asciidoc/pdf-prepress/index.pdf_ to see the 6x9" printable PDF file.
-* Open _build/asciidoc/pdf-pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
+* Open _build/asciidoc/pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
 * Open _build/asciidoc/epub3/index.mobi_ in http://calibre-ebook.com/[Calibre] to see the generated MOBI file.
 
