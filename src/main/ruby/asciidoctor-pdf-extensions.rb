@@ -66,6 +66,20 @@ module AsciidoctorPdfExtensions
           part_number = 'TWO'
         elsif sect_id.include? 'chapter-3'
           part_number = 'THREE'
+        elsif sect_id.include? 'chapter-4'
+          part_number = 'FOUR'
+        elsif sect_id.include? 'chapter-5'
+          part_number = 'FIVE'
+        elsif sect_id.include? 'chapter-6'
+          part_number = 'SIX'
+        elsif sect_id.include? 'chapter-7'
+          part_number = 'SEVEN'
+        elsif sect_id.include? 'chapter-8'
+          part_number = 'EIGHT'
+        elsif sect_id.include? 'chapter-9'
+          part_number = 'NINE'
+        elsif sect_id.include? 'chapter-10'
+          part_number = 'TEN'
         end
         if @ppbook
           layout_heading part_number, align: :right, size: 100, style: :bold
