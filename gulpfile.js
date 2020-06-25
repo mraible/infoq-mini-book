@@ -10,4 +10,4 @@ gulp.task('serve', function() {
     gulp.watch('build/asciidoc/html5/**/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', gulp.series('serve'));

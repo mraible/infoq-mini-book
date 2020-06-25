@@ -7,7 +7,7 @@
     "url": "git@bitbucket.org:mraible/infoq-mini-book.git"
   },
   "devDependencies": {
-    "gulp": "3.9.1",
-    "browser-sync": "2.24.7"
+    "gulp": "4.0.2",
+    "browser-sync": "2.26.7"
   }
 }

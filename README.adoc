@@ -45,28 +45,23 @@ The `generate-pdf.sh` script will then use Bundler to install the dependencies i
 
 == Sweet Authoring Experience
 
-If you'd like a very pleasant authoring experience, the project provides build files that make it possible. First of all,
-you'll need to run `gradlew` once. After running it once, you can run `./gradlew watch` to watch for any changes and
-recompile files as you save them.
+If you'd like a very pleasant authoring experience, the project provides build files that make it possible. Run `./gradlew html -t` to watch for any changes and recompile files as you save them.
 
 To have a similar awesome experience (watch and auto-reload) in your browser, install https://nodejs.org/[Node.js] on your machine.
 
-After installing Node, you can run the following command to install development tools (like http://www.browsersync.io/[Browsersync]).
-You will only need to run this command when dependencies change in `package.json`.
+After installing Node, you can run the following command to install development tools (like http://www.browsersync.io/[Browsersync]). You will only need to run this command when dependencies change in `package.json`.
 
 ----
 npm install
 ----
 
-This project use http://gulpjs.com/[Gulp] as the client-code build system. You can install the `gulp` command-line
-tool globally with:
+This project use http://gulpjs.com/[Gulp] as the client-code build system. You can install the `gulp` command-line tool globally with:
 
 ----
 npm install -g gulp-cli
 ----
 
-Now you can run the following `gulp` command to create a blissful development experience where your browser auto-refreshes
-when files change on your hard drive.
+Now you can run the following `gulp` command to create a blissful development experience where your browser auto-refreshes when files change on your hard drive.
 
 ----
 gulp

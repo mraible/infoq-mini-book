@@ -4,23 +4,21 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-        classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
-        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.5'
-        classpath 'org.jruby:jruby-complete:9.2.8.0'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.16'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.3'
+        classpath 'org.jruby:jruby-complete:9.2.11.1'
     }
 }
 
 plugins {
-    id 'de.undercouch.download' version '3.4.2'
+    id 'de.undercouch.download' version '4.0.4'
+    id 'se.patrikerdes.use-latest-versions' version '0.2.14'
+    id 'com.github.ben-manes.versions' version '0.28.0'
 }
 
 apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
-apply plugin: 'com.github.ben-manes.versions'
-apply plugin: 'com.bluepapa32.watch'
 
 version = '4.1.0-SNAPSHOT'
 
@@ -109,10 +107,3 @@ epub.shouldRunAfter pdf
 task all(dependsOn: ['html', 'epub', 'mobi'])
 
 defaultTasks 'all'
-
-watch {
-    asciidoc {
-        files fileTree(dir: 'src/docs/asciidoc', include: '**/*.adoc')
-        tasks 'asciidoctor'
-    }
-}
