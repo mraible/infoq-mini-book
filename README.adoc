@@ -1,11 +1,11 @@
-= An InfoQ Mini-Book
+= My Book
 
-This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB, and MOBI using the
+This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
 
 == Building
 
-To convert this book to HTML, EPUB, and MOBI, run the following command:
+To convert this book to HTML, EPUB, run the following command:
 
 ----
 $ build.sh
@@ -27,7 +27,6 @@ $ generate-pdf.sh screen
 * Open _build/asciidoc/pdf-prepress/index.pdf_ to see the 6x9" printable PDF file.
 * Open _build/asciidoc/pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
-* Open _build/asciidoc/epub3/index.mobi_ in http://calibre-ebook.com/[Calibre] to see the generated MOBI file.
 
 [NOTE]
 ====

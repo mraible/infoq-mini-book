@@ -31,7 +31,7 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -r "$ROOT_DIR/src/main/ruby/asciidoctor-pdf-extensions.rb" \
   -a media=$MEDIA \
   -a pdfmarks \
-  -a pdf-style=infoq-$MEDIA \
+  -a pdf-style=$MEDIA \
   -a pdf-stylesdir="$BASE_DIR/styles/pdf" \
   -a pdf-fontsdir="$BASE_DIR/styles/pdf/fonts" \
   -a sourcedir=../../../main/webapp \

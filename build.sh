@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-export KINDLEGEN="`pwd`/build/kindlegen/kindlegen"
-./gradlew all
+./gradlew all --warning-mode all

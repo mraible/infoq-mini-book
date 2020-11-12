@@ -2,11 +2,13 @@
 
 Why did you write this book?
 
-== What is in an InfoQ mini-book?
+== Foo
 
-InfoQ mini-books are designed to be concise, intending to serve technical architects looking to get a firm conceptual understanding of a new technology or technique in a quick yet in-depth fashion. You can think of these books as covering a topic strategically or essentially. After reading a mini-book, the reader should have a fundamental understanding of a technology, including when and where to apply it, how it relates to other technologies, and an overall feeling that they have assimilated the combined knowledge of other professionals who have already figured out what this technology is about. The reader will then be able to make intelligent decisions about the technology once their projects require it, and can delve into sources of more detailed information (such as larger books or tutorials) at that time.
+Bar
 
 == Who this book is for
+
+Foobar
 
 == What you need for this book
 
@@ -90,7 +92,3 @@ Finally, this text shows what a quote looks like:
 == Reader feedback
 
 We always welcome feedback from our readers. Let us know what you thought about this book — what you liked or disliked. Reader feedback helps us develop titles that deliver the most value to you.
-
-To send us feedback, e-mail us at feedback@infoq.com, send a tweet to @jhipster_book, or post a question on Stack Overflow using the "`jhipster`" tag.
-
-If you're interested in writing a mini-book for InfoQ, see http://www.infoq.com/minibook-guidelines.
