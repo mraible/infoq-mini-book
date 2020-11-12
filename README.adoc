@@ -11,6 +11,12 @@ To convert this book to HTML, EPUB, run the following command:
 $ build.sh
 ----
 
+If that fails with an error like ./gradlew: Syntax error: word unexpected (expecting "in"), then run the following command to fix the gradlew file:
+
+----
+sed -i.bak 's/\r$//' gradlew
+----
+
 To convert this book to a 6x9" PDF for printing:
 
 ----
