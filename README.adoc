@@ -3,18 +3,24 @@
 This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
 
-== Building
-
-To convert this book to HTML, EPUB, run the following command:
+== Installing
 
 ----
-$ build.sh
+npm run setup
 ----
 
 If that fails with an error like ./gradlew: Syntax error: word unexpected (expecting "in"), then run the following command to fix the gradlew file:
 
 ----
 sed -i.bak 's/\r$//' gradlew
+----
+
+== Building
+
+To convert this book to HTML, EPUB, run the following command:
+
+----
+$ npm run build
 ----
 
 To convert this book to a 6x9" PDF for printing:
@@ -63,16 +69,15 @@ You will only need to run this command when dependencies change in `package.json
 npm install
 ----
 
-This project use http://gulpjs.com/[Gulp] as the client-code build system. You can install the `gulp` command-line
-tool globally with:
+Now you can run the following command:
 
 ----
-npm install -g gulp-cli
+npm run watch
 ----
 
-Now you can run the following `gulp` command to create a blissful development experience where your browser auto-refreshes
-when files change on your hard drive.
+This will start two daemons:
 
-----
-gulp
-----
+. Gradle, which will watch the file system and rebuild the HTML version continuously using AsciiDoctor
+. BrowserSync, which will serve the updated HTML version all of the time and make it available over HTTP
+
+Thanks to this, you'll have a constantly up to date HTML version available in your browser while editing.

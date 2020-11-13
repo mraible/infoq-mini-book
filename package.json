@@ -1,13 +1,27 @@
 {
-  "name": "infoq-mini-book",
-  "version": "4.1.0",
-  "description": "InfoQ Mini-Book",
-  "repository": {
-    "type": "git",
-    "url": "git@bitbucket.org:mraible/infoq-mini-book.git"
+  "name": "my-book",
+  "version": "1.0.0",
+  "description": "My book",
+  "author": "",
+  "keywords": [
+    "book",
+    "asciidoc",
+    "asciidoctor"
+  ],
+  "scripts": {
+    "build": "bash ./gradlew all",
+    "clean": "npx rimraf ./build && bash ./gradlew clean all",
+    "serve": "npm run watch:all",
+    "setup": "npm install && npm run build",
+    "start": "npm run watch:all",
+    "watch": "npm run watch:all",
+    "watch:adoc": "bash ./gradlew --continuous html",
+    "watch:html": "nodemon ./watch.js",
+    "watch:all": "concurrently --kill-others \"npm run watch:adoc\" \"npm run watch:html\""
   },
   "devDependencies": {
-    "gulp": "3.9.1",
-    "browser-sync": "2.24.7"
+    "concurrently": "5.3.0",
+    "browser-sync": "2.26.13",
+    "nodemon": "2.0.6"
   }
 }

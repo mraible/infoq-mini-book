@@ -1,11 +1,11 @@
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
-        classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.36.0'
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.14'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.5'
@@ -20,16 +20,14 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
-apply plugin: 'com.bluepapa32.watch'
 
-version = '4.1.0-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 
 asciidoctorj {
     version = '2.1.0'
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask
-import org.gradle.internal.os.OperatingSystem
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
              'source-highlighter': 'rouge',
@@ -81,10 +79,3 @@ epub.shouldRunAfter pdf
 task all(dependsOn: ['html', 'pdf', 'epub'])
 
 defaultTasks 'all'
-
-watch {
-    asciidoc {
-        files fileTree(dir: 'src/docs/asciidoc', include: '**/*.adoc')
-        tasks 'asciidoctor'
-    }
-}
