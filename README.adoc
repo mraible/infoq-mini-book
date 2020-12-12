@@ -1,6 +1,6 @@
-= My Book
+= An InfoQ Mini-Book
 
-This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB using the
+This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB, and MOBI using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
 
 == Installing
@@ -9,7 +9,7 @@ http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin
 npm run setup
 ----
 
-If that fails with an error like ./gradlew: Syntax error: word unexpected (expecting "in"), then run the following command to fix the gradlew file:
+If that fails with an error like `./gradlew: Syntax error: word unexpected (expecting "in")`, then run the following command to fix the gradlew file:
 
 ----
 sed -i.bak 's/\r$//' gradlew
@@ -17,7 +17,7 @@ sed -i.bak 's/\r$//' gradlew
 
 == Building
 
-To convert this book to HTML, EPUB, run the following command:
+To convert this book to HTML and EPUB, run the following command:
 
 ----
 $ npm run build
@@ -77,7 +77,7 @@ npm run watch
 
 This will start two daemons:
 
-. Gradle, which will watch the file system and rebuild the HTML version continuously using AsciiDoctor
+. Gradle, which will watch the file system and rebuild the HTML version continuously using Asciidoctor
 . BrowserSync, which will serve the updated HTML version all of the time and make it available over HTTP
 
 Thanks to this, you'll have a constantly up to date HTML version available in your browser while editing.

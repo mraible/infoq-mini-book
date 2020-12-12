@@ -1,7 +1,11 @@
 {
-  "name": "my-book",
-  "version": "1.0.0",
-  "description": "My book",
+  "name": "infoq-mini-book",
+  "version": "5.0.0",
+  "description": "InfoQ Mini-Book",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:mraible/infoq-mini-book.git"
+  },
   "author": "",
   "keywords": [
     "book",
