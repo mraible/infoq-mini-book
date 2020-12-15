@@ -82,3 +82,18 @@ This will start two daemons:
 . BrowserSync, which will serve the updated HTML version all of the time and make it available over HTTP
 
 Thanks to this, you'll have a constantly up to date HTML version available in your browser while editing.
+
+== Update Dependencies
+
+To update the dependencies in `build.gradle`, run:
+
+----
+./gradlew useLatestVersions
+----
+
+To update the dependencies in `package.json`, install [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) and run it:
+
+----
+npm i -g npm-check-updates
+ncu
+----
