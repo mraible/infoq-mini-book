@@ -63,11 +63,12 @@ recompile files as you save them.
 To have a similar awesome experience (watch and auto-reload) in your browser, install https://nodejs.org/[Node.js] on your machine.
 
 After installing Node, you can run the following command to install development tools (like http://www.browsersync.io/[Browsersync]).
-You will only need to run this command when dependencies change in `package.json`.
 
 ----
 npm install
 ----
+
+TIP: You will only need to run this command when dependencies change in `package.json`.
 
 Now you can run the following command:
 

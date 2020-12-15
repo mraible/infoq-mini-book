@@ -44,7 +44,7 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -a projectdir=../../.. \
   -a rootdir=../../.. \
   -a project-name=jhipster-book \
-  -a project-version=2.0.0-SNAPSHOT \
+  -a project-version=1.0.0-SNAPSHOT \
   -a attribute-missing=warn \
   "$BASE_DIR/index.adoc"
 
