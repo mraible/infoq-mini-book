@@ -31,7 +31,7 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -r "$ROOT_DIR/src/main/ruby/asciidoctor-pdf-extensions.rb" \
   -a media=$MEDIA \
   -a pdfmarks \
-  -a pdf-style=infoq-$MEDIA \
+  -a pdf-style=$MEDIA \
   -a pdf-stylesdir="$BASE_DIR/styles/pdf" \
   -a pdf-fontsdir="$BASE_DIR/styles/pdf/fonts" \
   -a sourcedir=../../../main/webapp \
@@ -44,7 +44,7 @@ $ASCIIDOCTOR_PDF --trace -B "$BASE_DIR" \
   -a projectdir=../../.. \
   -a rootdir=../../.. \
   -a project-name=jhipster-book \
-  -a project-version=2.0.0-SNAPSHOT \
+  -a project-version=1.0.0-SNAPSHOT \
   -a attribute-missing=warn \
   "$BASE_DIR/index.adoc"
 

@@ -102,6 +102,7 @@ Desktop.ini
 /build/**
 /bin/**
 /deploy/**
+dist/
 
 ######################
 # Logs
@@ -115,6 +116,9 @@ Desktop.ini
 *.*~
 *~
 .merge_file*
+.~lock*
+*.DS_Store
+*.zip
 
 ######################
 # Gradle Wrapper

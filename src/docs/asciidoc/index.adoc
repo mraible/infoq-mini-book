@@ -1,12 +1,12 @@
-= My InfoQ Mini-Book
+= My Book
 :book-title: {doctitle}
 :author: Your Name
-:email:  youremail@infoq.com
+:email:  youremail@...
 :revnumber: 1.0
 :revdate: {docdate}
 :revyear: 2018
-:subject: JHipster
-:keywords: Angular, Bootstrap, Spring Boot
+:subject: Whatever
+:keywords: Something, Else
 :doctype: book
 :media: screen
 ifeval::["{media}" != "prepress"]
@@ -21,7 +21,7 @@ endif::[]
 :experimental:
 :pdf-fontsdir: ./styles/pdf/fonts
 :pdf-stylesdir: ./styles/pdf
-:pdf-style: infoq-screen
+:pdf-style: screen
 ifndef::ebook-format[:leveloffset: 1]
 
 [colophon#colophon%nonfacing]

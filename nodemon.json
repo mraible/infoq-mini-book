@@ -1,0 +1,7 @@
+{
+	"verbose": false,
+	"ignore": ["**/*"],
+	"events": {
+		"crash": "npm run serve"
+	}
+}
