@@ -12,4 +12,4 @@ jobs:
       with:
         java-version: 11
     - name: Build book
-      run: sh build.sh
+      run: npm run setup
