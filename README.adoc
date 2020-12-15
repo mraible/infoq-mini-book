@@ -1,6 +1,6 @@
 = An InfoQ Mini-Book
 
-This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB, and MOBI using the
+This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, and EPUB using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
 
 == Installing
