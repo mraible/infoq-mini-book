@@ -59,7 +59,7 @@ To update the dependencies in `build.gradle`, run:
 ./gradlew useLatestVersions
 ----
 
-To update the dependencies in `package.json`, install [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) and run it:
+To update the dependencies in `package.json`, install https://www.npmjs.com/package/npm-check-updates[npm-check-updates] and run it:
 
 ----
 npm i -g npm-check-updates
