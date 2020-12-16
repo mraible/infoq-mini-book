@@ -1,8 +1,9 @@
 name: Publish
 
 on:
-  release:
-    types: [ published ]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -14,8 +15,21 @@ jobs:
           java-version: 11
       - name: Build book
         run: npm run setup
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: my-book
-          path: build/asciidoc
+          tag_name: ${{ github.ref }}
+          release_name: v${{ github.ref }}
+          draft: false
+          prerelease: false
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build/asciidoc
+          asset_name: my-book-${{ github.ref }}.zip
+          asset_content_type: application/zip
