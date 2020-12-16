@@ -15,9 +15,21 @@ jobs:
           java-version: 11
       - name: Build book
         run: npm run setup
+      - name: Rename files
+        run: |
+          echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+          find ./build -type f -name "index.*" | while read fname; do
+             dirname=`dirname "$fname"`
+             foldername=`basename "$dirname"`
+             filename=`basename "$fname"`
+             extension="${filename##*.}"
+             newname=`echo "$dirname" | sed -e "s/ /_/g"`
+             echo $newname
+             cp "${dirname}/$filename" "./build/${{ github.event.repository.name }}-${foldername}-${RELEASE-VERSION}.${extension}"
+           done
       - name: Upload release
         uses: alexellis/upload-assets@0.2.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          asset_paths: '["build/asciidoc/**/{*.pdf,*.epub}"]'
+          asset_paths: '["build/{*.pdf,*.epub,*.html}"]'
