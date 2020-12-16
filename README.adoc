@@ -23,36 +23,10 @@ To convert this book to HTML and EPUB, run the following command:
 $ npm run build
 ----
 
-To convert this book to a 6x9" PDF for printing:
-
-----
-$ generate-pdf.sh
-----
-
-To convert this book to a 8.5x11" PDF for downloading:
-
-----
-$ generate-pdf.sh screen
-----
-
 * Open _build/asciidoc/html5/index.html_ in your browser to see the generated HTML file.
 * Open _build/asciidoc/pdf-prepress/index.pdf_ to see the 6x9" printable PDF file.
 * Open _build/asciidoc/pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
-
-[NOTE]
-====
-To be able to generate the PDF, you need have some dependencies installed.
-
-First, install https://rvm.io/rvm/install#basic-install[RVM] to manage your Ruby installation(s).
-Once RVM is installed and loaded, run the following commands:
-
-. `rvm install 2.6`
-. `rvm use 2.6`
-. `gem install bundler`
-
-The `generate-pdf.sh` script will then use Bundler to install the dependencies it needs.
-====
 
 == Sweet Authoring Experience
 
