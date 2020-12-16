@@ -4,7 +4,7 @@
 :email:  youremail@...
 :revnumber: 1.0
 :revdate: {docdate}
-:revyear: 2018
+:revyear: 2020
 :subject: Whatever
 :keywords: Something, Else
 :doctype: book
@@ -47,8 +47,3 @@ include::chapters/chapter3.adoc[]
 include::chapters/action.adoc[]
 
 include::chapters/about.adoc[]
-
-//ifdef::backend-pdf,backend-docbook[]
-//[index]
-//== Index
-//endif::[]s
