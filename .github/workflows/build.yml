@@ -19,6 +19,13 @@ jobs:
         java-version: 11
     - name: Build book
       run: npm run setup
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
     - name: Build print PDF
       run: ./generate-pdf.sh
     - name: Build downloadable PDF
