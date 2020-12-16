@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "bash ./gradlew all",
-    "clean": "npx rimraf ./build && bash ./gradlew clean all",
+    "clean": "bash ./gradlew clean",
     "serve": "npm run watch:all",
     "setup": "npm install && npm run build",
     "start": "npm run setup && npm run watch",
