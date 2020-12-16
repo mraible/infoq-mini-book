@@ -15,15 +15,16 @@ jobs:
           java-version: 11
       - name: Build book
         run: npm run setup
+      - name: Get release version
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Rename files
         run: |
-          echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
           find ./build -type f -name "index.*" | while read fname; do
              dirname=`dirname "$fname"`
              foldername=`basename "$dirname"`
              filename=`basename "$fname"`
              extension="${filename##*.}"
-             cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${RELEASE-VERSION}.${extension}"
+             cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${{ env.RELEASE_VERSION }}.${extension}"
            done
       - name: Upload release
         uses: alexellis/upload-assets@0.2.2
