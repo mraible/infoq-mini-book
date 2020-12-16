@@ -13,3 +13,8 @@ jobs:
         java-version: 11
     - name: Build book
       run: npm run setup
+    - name: Archive Output
+      uses: actions/upload-artifact@v1
+      with:
+        name: book-${{ matrix.os }}
+        path: build/asciidoc
