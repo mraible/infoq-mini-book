@@ -15,17 +15,8 @@ jobs:
           java-version: 11
       - name: Build book
         run: npm run setup
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: v${{ github.ref }}
-          draft: false
-          prerelease: false
-      - uses: alexellis/upload-assets@0.2.2
+      - name: Upload release
+        uses: alexellis/upload-assets@0.2.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
