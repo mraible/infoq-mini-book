@@ -23,9 +23,7 @@ jobs:
              foldername=`basename "$dirname"`
              filename=`basename "$fname"`
              extension="${filename##*.}"
-             newname=`echo "$dirname" | sed -e "s/ /_/g"`
-             echo $newname
-             cp "${dirname}/$filename" "./build/${{ github.event.repository.name }}-${foldername}-${RELEASE-VERSION}.${extension}"
+             cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${RELEASE-VERSION}.${extension}"
            done
       - name: Upload release
         uses: alexellis/upload-assets@0.2.2
