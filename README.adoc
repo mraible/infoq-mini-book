@@ -1,3 +1,5 @@
+image::https://github.com/mraible/infoq-mini-book/workflows/Book%20CI/badge.svg[link="https://github.com/mraible/infoq-mini-book/actions",alt="Actions Status"]
+
 = An InfoQ Mini-Book
 
 This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, and EPUB using the
