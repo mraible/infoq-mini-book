@@ -9,18 +9,12 @@ http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin
 npm run setup
 ----
 
-If that fails with an error like `./gradlew: Syntax error: word unexpected (expecting "in")`, then run the following command to fix the gradlew file:
-
-----
-sed -i.bak 's/\r$//' gradlew
-----
-
 == Building
 
 To convert this book to HTML and EPUB, run the following command:
 
 ----
-$ npm run build
+npm run build
 ----
 
 * Open _build/asciidoc/html5/index.html_ in your browser to see the generated HTML file.
