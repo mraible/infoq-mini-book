@@ -20,15 +20,17 @@ jobs:
       - name: Rename files
         run: |
           find ./build -type f -name "index.*" | while read fname; do
-             dirname=`dirname "$fname"`
-             foldername=`basename "$dirname"`
-             filename=`basename "$fname"`
-             extension="${filename##*.}"
-             cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${{ env.RELEASE_VERSION }}.${extension}"
-           done
+            dirname=`dirname "$fname"`
+            foldername=`basename "$dirname"`
+            filename=`basename "$fname"`
+            extension="${filename##*.}"
+            cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${{ env.RELEASE_VERSION }}.${extension}"
+          done
+          cd ./build/asciidoc/html5
+          zip -r ${{ github.event.repository.name }}-html5-${{ env.RELEASE_VERSION }} **
       - name: Upload release
         uses: alexellis/upload-assets@0.2.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          asset_paths: '["build/{*.pdf,*.epub,*.html}"]'
+          asset_paths: '["build/{*.pdf,*.epub,*.zip}"]'
