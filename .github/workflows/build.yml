@@ -5,7 +5,7 @@ on:
       - main
     tags: # all tags
       - '*'
-    pull_request: # build all PRs
+  pull_request: # build all PRs
 jobs:
   gradle:
     strategy:
