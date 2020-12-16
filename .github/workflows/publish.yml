@@ -20,6 +20,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          asset_paths: build/asciidoc
-          asset_name: my-book-${{ github.ref }}.zip
-          asset_content_type: application/zip
+          asset_paths: '["build/asciidoc"]'
