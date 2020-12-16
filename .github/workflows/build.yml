@@ -13,7 +13,11 @@ jobs:
         java-version: 11
     - name: Build book
       run: npm run setup
-    - name: Archive Output
+    - name: Build print PDF
+      run: ./generate-pdf.sh
+    - name: Build downloadable PDF
+      run: ./generate-pdf.sh screen
+    - name: Archive artifacts
       uses: actions/upload-artifact@v1
       with:
         name: book-${{ matrix.os }}
