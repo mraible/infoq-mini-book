@@ -23,5 +23,5 @@ indent_size = 2
 max_line_length = off
 trim_trailing_whitespace = false
 
-[{*.json,*.js}]
+[{*.json,*.js,*.yml}]
 indent_size = 2

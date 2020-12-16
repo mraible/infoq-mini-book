@@ -1,0 +1,21 @@
+name: Publish
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Build book
+        run: npm run setup
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: my-book
+          path: build/asciidoc
