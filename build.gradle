@@ -26,7 +26,7 @@ apply plugin: 'com.github.ben-manes.versions'
 version = '1.0.0-SNAPSHOT'
 
 asciidoctorj {
-    version = '2.1.0'
+    version = '2.4.2'
 }
 
 import org.asciidoctor.gradle.AsciidoctorTask

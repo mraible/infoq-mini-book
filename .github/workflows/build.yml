@@ -3,8 +3,6 @@ on:
   push:
     branches: # build any changes to main
       - main
-    tags: # all tags
-      - '*'
   pull_request: # build all PRs
 jobs:
   gradle:
@@ -19,8 +17,3 @@ jobs:
         java-version: 11
     - name: Build book
       run: npm run setup
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: book-${{ matrix.os }}
-        path: build/asciidoc
