@@ -68,6 +68,7 @@ task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     outputDir "$buildDir/asciidoc/pdf-screen"
     backends 'pdf'
+    separateOutputDirs false
 }
 
 task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
@@ -75,6 +76,7 @@ task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
 }
 
 pdf.shouldRunAfter html
+prepress.shouldRunAfter pdf
 epub.shouldRunAfter prepress
 
 task all(dependsOn: ['html', 'pdf', 'prepress', 'epub'])
