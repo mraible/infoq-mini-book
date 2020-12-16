@@ -27,7 +27,7 @@ jobs:
             cp "${dirname}/${filename}" "./build/${{ github.event.repository.name }}-${foldername}-${{ env.RELEASE_VERSION }}.${extension}"
           done
           cd ./build/asciidoc/html5
-          zip -r ${{ github.event.repository.name }}-html5-${{ env.RELEASE_VERSION }} **
+          zip -r ${{ github.event.repository.name }}-html5-${{ env.RELEASE_VERSION }}.zip **
           mv *.zip ../..
       - name: Upload release
         uses: alexellis/upload-assets@0.2.2
