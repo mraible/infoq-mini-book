@@ -1,5 +1,11 @@
-name: Build
-on: pull_request
+name: Book CI
+on:
+  push:
+    branches: # build any changes to main
+      - main
+    tags: # all tags
+      - '*'
+    pull_request: # build all PRs
 jobs:
   gradle:
     strategy:
