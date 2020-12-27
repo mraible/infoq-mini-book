@@ -77,4 +77,4 @@ This project includes GitHub action workflows to build and publish the book (PDF
 
 Once completed, the publish workflow will attach the generated files to the release page.
 
-Note that for the second option (i.e., the release npm script), you'll need to make sure that a GITHUB_TOKEN environment variable is available, as explained here: https://github.com/release-it/release-it/blob/master/docs/environment-variables.md
+Note that for the second option (i.e., the release npm script), you'll need to make sure that a GITHUB_TOKEN environment variable is available, as explained in [release-it's documentation](https://github.com/release-it/release-it/blob/master/docs/environment-variables.md).
