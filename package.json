@@ -12,6 +12,7 @@
     "asciidoc",
     "asciidoctor"
   ],
+  "private": true,
   "scripts": {
     "build": "bash ./gradlew all",
     "clean": "bash ./gradlew clean",
@@ -21,11 +22,13 @@
     "watch": "npm run watch:all",
     "watch:adoc": "bash ./gradlew --continuous html",
     "watch:html": "nodemon ./watch.js",
-    "watch:all": "concurrently --kill-others \"npm run watch:adoc\" \"npm run watch:html\""
+    "watch:all": "concurrently --kill-others \"npm run watch:adoc\" \"npm run watch:html\"",
+    "release": "release-it"
   },
   "devDependencies": {
-    "concurrently": "5.3.0",
     "browser-sync": "2.26.13",
-    "nodemon": "2.0.6"
+    "concurrently": "5.3.0",
+    "nodemon": "2.0.6",
+    "release-it": "14.2.2"
   }
 }
