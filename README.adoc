@@ -67,3 +67,7 @@ To update the dependencies in `package.json`, install https://www.npmjs.com/pack
 npm i -g npm-check-updates
 ncu
 ----
+
+== Releasing/Publishing
+
+This project includes GitHub action workflows to build and publish the book (PDF, EPUB, HTML). To trigger this, you need to create a release on your book repository. Once completed, the publish workflow will attach the generated files to the release page.
