@@ -70,4 +70,4 @@ ncu
 
 == Releasing/Publishing
 
-This project includes Github action workflows to build and publish the book (pdf, epub, html). To trigger this, you need to create a release on your book repository. Once completed, the publish workflow will attach the generated files to the release page.
+This project includes GitHub action workflows to build and publish the book (PDF, EPUB, HTML). To trigger this, you need to create a release on your book repository. Once completed, the publish workflow will attach the generated files to the release page.
