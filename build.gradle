@@ -23,7 +23,10 @@ apply plugin: 'java'
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
 
-version = '1.0.0-SNAPSHOT'
+/**
+ * Take the version in version.txt as version for the project
+ */
+version = file('version.txt').text.trim()
 
 asciidoctorj {
     version = '2.4.2'
