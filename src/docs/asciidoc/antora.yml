@@ -1,0 +1,14 @@
+name: book
+title: My Book
+version: master
+nav:
+  - nav.adoc
+asciidoc:
+  attributes:
+    book-title: My Book
+    author: Your Name
+    revnumber: 1.0
+    revyear: 2021
+    email: youremail@...
+    subject: Whatever
+    keywords: Something, Else

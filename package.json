@@ -26,10 +26,12 @@
     "release": "release-it"
   },
   "devDependencies": {
+    "@antora/cli": "^2.3.4",
+    "@release-it/bumper": "3.0.1",
     "browser-sync": "2.27.7",
     "concurrently": "6.3.0",
     "nodemon": "2.0.14",
-    "release-it": "14.11.6",
-    "@release-it/bumper": "3.0.1"
+    "mini-book-site-generator": "file:../mini-book-site-generator",
+    "release-it": "14.11.6"
   }
 }

@@ -1,0 +1,16 @@
+runtime:
+  cache_dir: ./.cache/antora
+site:
+  title: InfoQ Mini Book
+  start_page: book::index.adoc
+content:
+  sources:
+    - url: '.'
+      branches: HEAD
+      start_path: src/docs/asciidoc
+ui:
+  bundle:
+    url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.1.0/ui-bundle.zip
+    snapshot: true
+output:
+  dir: ./public
