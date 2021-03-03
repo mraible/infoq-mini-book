@@ -10,7 +10,7 @@ content:
       start_path: src/docs/asciidoc
 ui:
   bundle:
-    url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.1.0/ui-bundle.zip
+    url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.2.1/ui-bundle.zip
     snapshot: true
 output:
   dir: ./public
