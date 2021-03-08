@@ -30,7 +30,7 @@ jobs:
           zip -r ${{ github.event.repository.name }}-html5-${{ env.RELEASE_VERSION }}.zip **
           mv *.zip ../..
       - name: Upload release
-        uses: alexellis/upload-assets@0.2.3
+        uses: alexellis/upload-assets@0.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
