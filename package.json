@@ -30,8 +30,8 @@
     "@release-it/bumper": "3.0.1",
     "browser-sync": "2.27.7",
     "concurrently": "6.3.0",
+    "mini-book-site-generator": "git+https://github.com/Mogztter/mini-book-site-generator.git#main",
     "nodemon": "2.0.14",
-    "mini-book-site-generator": "file:../mini-book-site-generator",
     "release-it": "14.11.6"
   }
 }
