@@ -15,6 +15,7 @@
   "private": true,
   "scripts": {
     "build": "bash ./gradlew all",
+    "build:site": "node generate-site.js",
     "clean": "bash ./gradlew clean",
     "serve": "npm run watch:all",
     "setup": "npm install && npm run build",
