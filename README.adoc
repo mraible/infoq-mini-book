@@ -1,47 +1,28 @@
+image::https://github.com/mraible/infoq-mini-book/workflows/Book%20CI/badge.svg[link="https://github.com/mraible/infoq-mini-book/actions",alt="Actions Status"]
+
 = An InfoQ Mini-Book
 
-This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, EPUB, and MOBI using the
+This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, and EPUB using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
+
+== Installing
+
+----
+npm run setup
+----
 
 == Building
 
-To convert this book to HTML, EPUB, and MOBI, run the following command:
+To convert this book to HTML and EPUB, run the following command:
 
 ----
-$ build.sh
-----
-
-To convert this book to a 6x9" PDF for printing:
-
-----
-$ generate-pdf.sh
-----
-
-To convert this book to a 8.5x11" PDF for downloading:
-
-----
-$ generate-pdf.sh screen
+npm run build
 ----
 
 * Open _build/asciidoc/html5/index.html_ in your browser to see the generated HTML file.
 * Open _build/asciidoc/pdf-prepress/index.pdf_ to see the 6x9" printable PDF file.
 * Open _build/asciidoc/pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
-* Open _build/asciidoc/epub3/index.mobi_ in http://calibre-ebook.com/[Calibre] to see the generated MOBI file.
-
-[NOTE]
-====
-To be able to generate the PDF, you need have some dependencies installed.
-
-First, install https://rvm.io/rvm/install#basic-install[RVM] to manage your Ruby installation(s).
-Once RVM is installed and loaded, run the following commands:
-
-. `rvm install 2.6`
-. `rvm use 2.6`
-. `gem install bundler`
-
-The `generate-pdf.sh` script will then use Bundler to install the dependencies it needs.
-====
 
 == Sweet Authoring Experience
 
@@ -52,22 +33,50 @@ recompile files as you save them.
 To have a similar awesome experience (watch and auto-reload) in your browser, install https://nodejs.org/[Node.js] on your machine.
 
 After installing Node, you can run the following command to install development tools (like http://www.browsersync.io/[Browsersync]).
-You will only need to run this command when dependencies change in `package.json`.
 
 ----
 npm install
 ----
 
-This project use http://gulpjs.com/[Gulp] as the client-code build system. You can install the `gulp` command-line
-tool globally with:
+TIP: You will only need to run this command when dependencies change in `package.json`.
+
+Now you can run the following command:
 
 ----
-npm install -g gulp-cli
+npm run watch
 ----
 
-Now you can run the following `gulp` command to create a blissful development experience where your browser auto-refreshes
-when files change on your hard drive.
+This will start two daemons:
+
+. Gradle, which will watch the file system and rebuild the HTML version continuously using Asciidoctor
+. BrowserSync, which will serve the updated HTML version all of the time and make it available over HTTP
+
+Thanks to this, you'll have a constantly up to date HTML version available in your browser while editing.
+
+== Update Dependencies
+
+To update the dependencies in `build.gradle`, run:
 
 ----
-gulp
+./gradlew useLatestVersions
 ----
+
+To update the dependencies in `package.json`, install https://www.npmjs.com/package/npm-check-updates[npm-check-updates] and run it:
+
+----
+npm i -g npm-check-updates
+ncu
+----
+
+== Releasing/Publishing
+
+This project includes GitHub action workflows to build and publish the book (PDF, EPUB, HTML). To trigger this, you have two options:
+
+* Run the following script: `npm run release`
+* Use GitHub's UI to create the release from your book repository
+
+Once completed, the publish workflow will attach the generated files to the release page.
+
+The benefit of the release npm script is that the version will be updated automatically in the `package.json` and `version.txt` files. The version will be reflected in the generated files because the version in `version.txt` is used as the Gradle project version when building the book.
+
+Note that in order for the release npm script to work, you'll need to make sure that a `GITHUB_TOKEN` environment variable is available, as explained in [release-it's documentation](https://github.com/release-it/release-it/blob/master/docs/environment-variables.md).

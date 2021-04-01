@@ -1,6 +1,6 @@
 # EditorConfig helps developers define and maintain consistent
 # coding styles between different editors and IDEs
-# editorconfig.org
+# https://editorconfig.org
 
 root = true
 
@@ -16,9 +16,12 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[*.adoc]
+indent_size = 2
+
 [*.md]
+max_line_length = off
 trim_trailing_whitespace = false
 
-[{package,bower}.json]
-indent_style = space
+[{*.json,*.js,*.yml}]
 indent_size = 2
