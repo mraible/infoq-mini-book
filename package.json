@@ -29,7 +29,7 @@
     "browser-sync": "2.26.14",
     "concurrently": "6.1.0",
     "nodemon": "2.0.7",
-    "release-it": "14.6.1",
+    "release-it": "14.6.2",
     "@release-it/bumper": "2.0.0"
   }
 }
