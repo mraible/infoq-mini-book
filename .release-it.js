@@ -44,7 +44,7 @@ const releaseItConfig = {
          */
         "@release-it/bumper": {
             /**
-             * version.txt has the 'master' version (single source of truth for the current version)
+             * version.txt has the 'main' version (single source of truth for the current version)
              */
             in: "version.txt",
             /**
