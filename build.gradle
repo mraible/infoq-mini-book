@@ -5,7 +5,7 @@ buildscript {
 
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.39.0'
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
+        classpath 'org.asciidoctor:asciidoctor-gradle-jvm:3.3.2'
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.1'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
         classpath 'org.jruby:jruby-complete:9.2.19.0'
@@ -19,7 +19,7 @@ plugins {
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'org.asciidoctor.jvm.convert'
 apply plugin: 'com.github.ben-manes.versions'
 
 /**
@@ -28,10 +28,10 @@ apply plugin: 'com.github.ben-manes.versions'
 version = file('version.txt').text.trim()
 
 asciidoctorj {
-    version = '2.4.2'
+    version = '3.2.0'
 }
 
-import org.asciidoctor.gradle.AsciidoctorTask
+import org.asciidoctor.gradle.jvm.AsciidoctorTask
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
              'source-highlighter': 'rouge',
