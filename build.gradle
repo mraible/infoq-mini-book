@@ -29,6 +29,7 @@ version = file('version.txt').text.trim()
 
 asciidoctorj {
     version = '3.2.0'
+    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
 }
 
 import org.asciidoctor.gradle.jvm.AsciidoctorTask
@@ -61,8 +62,7 @@ task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
 task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
     attributes attrs + ['media' : 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress']
     attrs.remove('source-highlighter')
-    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
-    outputDir '$buildDir/asciidoc/pdf-prepress'
+    outputDir "$buildDir/asciidoc/pdf-prepress"
     outputOptions {
         backends 'pdf'
         separateOutputDirs false
@@ -71,8 +71,7 @@ task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress pr
 
 task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
     attributes attrs + ['pdfmarks': '', 'source-highlighter': 'rouge']
-    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
-    outputDir '$buildDir/asciidoc/pdf-screen'
+    outputDir "$buildDir/asciidoc/pdf-screen"
     outputOptions {
         backends 'pdf'
         separateOutputDirs false
