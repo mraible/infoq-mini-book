@@ -53,28 +53,36 @@ tasks.withType(AsciidoctorTask) { task ->
 }
 
 task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
-    backends ['html5']
+    outputOptions {
+        backends 'html5'
+    }
 }
 
 task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
     attributes attrs + ['media' : 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress']
     attrs.remove('source-highlighter')
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
-    backends ['pdf']
-    outputDir "$buildDir/asciidoc/pdf-prepress"
-    separateOutputDirs false
+    outputDir '$buildDir/asciidoc/pdf-prepress'
+    outputOptions {
+        backends 'pdf'
+        separateOutputDirs false
+    }
 }
 
 task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
     attributes attrs + ['pdfmarks': '', 'source-highlighter': 'rouge']
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
-    outputDir "$buildDir/asciidoc/pdf-screen"
-    backends ['pdf']
-    separateOutputDirs false
+    outputDir '$buildDir/asciidoc/pdf-screen'
+    outputOptions {
+        backends 'pdf'
+        separateOutputDirs false
+    }
 }
 
 task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
-    backends ['epub3']
+    outputOptions {
+        backends 'epub3'
+    }
 }
 
 pdf.shouldRunAfter html
