@@ -8,7 +8,7 @@ buildscript {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.1'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
-        classpath 'org.jruby:jruby-complete:9.2.19.0'
+        classpath 'org.jruby:jruby-complete:9.3.0.0'
     }
 }
 
