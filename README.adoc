@@ -1,6 +1,6 @@
-image::https://github.com/mraible/infoq-mini-book/workflows/Book%20CI/badge.svg[link="https://github.com/mraible/infoq-mini-book/actions",alt="Actions Status"]
-
 = An InfoQ Mini-Book
+
+image::https://github.com/mraible/infoq-mini-book/workflows/Book%20CI/badge.svg[link="https://github.com/mraible/infoq-mini-book/actions",alt="Actions Status"]
 
 This is an awesome book. It's written in AsciiDoc and compiles to HTML, PDF, and EPUB using the
 http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Asciidoctor Gradle plugin].
@@ -23,6 +23,10 @@ npm run build
 * Open _build/asciidoc/pdf-prepress/index.pdf_ to see the 6x9" printable PDF file.
 * Open _build/asciidoc/pdf-screen/index.pdf_ to see the downloadable 8.5x11" PDF file.
 * Open _build/asciidoc/epub3/index.epub_ in iBooks to see the generated EPUB file.
+
+To generate a static site using Antora, run the following command:
+
+ npm run build:site
 
 == Sweet Authoring Experience
 
@@ -53,6 +57,10 @@ This will start two daemons:
 
 Thanks to this, you'll have a constantly up to date HTML version available in your browser while editing.
 
+Similarly, you can run the following command to continuously watch the file system and rebuild the static site:
+
+ npm run watch:site
+
 == Update Dependencies
 
 To update the dependencies in `build.gradle`, run:
@@ -80,3 +88,8 @@ Once completed, the publish workflow will attach the generated files to the rele
 The benefit of the release npm script is that the version will be updated automatically in the `package.json` and `version.txt` files. The version will be reflected in the generated files because the version in `version.txt` is used as the Gradle project version when building the book.
 
 Note that in order for the release npm script to work, you'll need to make sure that a `GITHUB_TOKEN` environment variable is available, as explained in https://github.com/release-it/release-it/blob/master/docs/environment-variables.md[release-it's documentation].
+
+== Netlify Preview
+
+This repository is using a `netlify.toml` configuration file to build and publish the static site using https://www.netlify.com/[Netlify].
+You can see the result at: https://infoq-mini-book.netlify.app/
