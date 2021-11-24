@@ -26,10 +26,10 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "browser-sync": "2.27.3",
-    "concurrently": "6.2.0",
-    "nodemon": "2.0.9",
-    "release-it": "14.10.1",
-    "@release-it/bumper": "2.0.0"
+    "browser-sync": "2.27.7",
+    "concurrently": "6.4.0",
+    "nodemon": "2.0.15",
+    "release-it": "14.11.7",
+    "@release-it/bumper": "3.0.1"
   }
 }
