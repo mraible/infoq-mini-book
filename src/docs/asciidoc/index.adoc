@@ -12,7 +12,7 @@
 ifeval::["{media}" != "prepress"]
 :coverfilesuffix: .png
 ifdef::backend-pdf[:coverfilesuffix: .jpg]
-:front-cover-image: image:cover{coverfilesuffix}[Front Cover,1050,1600]
+:front-cover-image: image:cover{coverfilesuffix}[Front Cover,fit=fill]
 endif::[]
 :toc:
 :icons: font
@@ -31,7 +31,7 @@ include::chapters/colophon.adoc[]
 include::chapters/dedication.adoc[]
 
 [%nonfacing]
-include::chapters/acknowledgements.adoc[]
+include::chapters/acknowledgments.adoc[]
 
 [preface]
 include::chapters/preface.adoc[]

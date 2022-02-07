@@ -72,7 +72,6 @@ export class SearchComponent {
 <2> `search()` is a method that's called from the HTML's `<button>`, wired up using the `(click)` event handler.
 <3> `this.query` is a variable that's wired to `<input>` using two-way binding with `[(ngModel)]="query"`.
 
-
 TIP: Tips are shown using callouts like this.
 
 WARNING: Warnings are shown using callouts like this.
@@ -91,6 +90,13 @@ Finally, this text shows what a quote looks like:
 
 We always welcome feedback from our readers. Let us know what you thought about this book — what you liked or disliked. Reader feedback helps us develop titles that deliver the most value to you.
 
+[.text-left]
 To send us feedback, e-mail us at feedback@infoq.com, send a tweet to @jhipster_book, or post a question on Stack Overflow using the "`jhipster`" tag.
 
+[.text-left]
 If you're interested in writing a mini-book for InfoQ, see http://www.infoq.com/minibook-guidelines.
+
+ifeval::["{media}" == "prepress"]
+[.text-left]
+The most up-to-date version of this book can be downloaded from https://infoq.com/minibooks/your-mini-book.
+endif::[]
