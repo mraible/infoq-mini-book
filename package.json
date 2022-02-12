@@ -28,10 +28,9 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "@antora/cli": "2.3.4",
-    "@release-it/bumper": "3.0.1",
+    "@antora/cli": "3.0.1",
     "browser-sync": "2.27.7",
-    "chokidar": "3.5.1",
+    "chokidar": "3.5.3",
     "concurrently": "7.0.0",
     "mini-book-site-generator": "git+https://github.com/Mogztter/mini-book-site-generator.git#main",
     "nodemon": "2.0.15",
