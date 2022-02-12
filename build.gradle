@@ -5,22 +5,28 @@ buildscript {
 
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.39.0'
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
-        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.1'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
-        classpath 'org.jruby:jruby-complete:9.3.1.0'
     }
 }
 
 plugins {
-    id 'de.undercouch.download' version '4.1.2'
+    id 'org.asciidoctor.jvm.gems' version '3.3.2'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2' apply false
+    id 'org.asciidoctor.jvm.pdf' version '3.3.2'
+    id 'org.asciidoctor.jvm.epub' version '3.3.2'
+    id 'de.undercouch.download' version '5.0.1'
     id 'se.patrikerdes.use-latest-versions' version '0.2.18'
-    id 'com.github.ben-manes.versions' version '0.39.0'
+    id 'com.github.ben-manes.versions' version '0.42.0'
 }
 
 apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
+
+repositories {
+    mavenCentral()
+    ruby {
+        gems()
+    }
+}
 
 /**
  * Take the version in version.txt as version for the project
@@ -28,10 +34,11 @@ apply plugin: 'com.github.ben-manes.versions'
 version = file('version.txt').text.trim()
 
 asciidoctorj {
-    version = '2.4.2'
+    version = '2.5.2'
+    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
 }
 
-import org.asciidoctor.gradle.AsciidoctorTask
+import org.asciidoctor.gradle.jvm.AsciidoctorTask
 
 def attrs = ['sourcedir'         : '../../../main/webapp',
              'source-highlighter': 'rouge',
@@ -47,34 +54,44 @@ def attrs = ['sourcedir'         : '../../../main/webapp',
 
 tasks.withType(AsciidoctorTask) { task ->
     attributes attrs
+    sourceDir 'src/docs/asciidoc'
+    baseDirFollowsSourceDir()
     sources {
         include 'index.adoc'
     }
 }
 
 task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
-    backends 'html5'
+    outputDir "$buildDir/asciidoc/html5"
+    outputOptions {
+        backends 'html5'
+    }
 }
 
 task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
     attributes attrs + ['media' : 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress']
     attrs.remove('source-highlighter')
-    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
-    backends 'pdf'
     outputDir "$buildDir/asciidoc/pdf-prepress"
-    separateOutputDirs false
+    outputOptions {
+        backends 'pdf'
+        setSeparateOutputDirs false
+    }
 }
 
 task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
     attributes attrs + ['pdfmarks': '', 'source-highlighter': 'rouge']
-    requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     outputDir "$buildDir/asciidoc/pdf-screen"
-    backends 'pdf'
-    separateOutputDirs false
+    outputOptions {
+        backends 'pdf'
+        setSeparateOutputDirs false
+    }
 }
 
 task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
-    backends 'epub3'
+    outputDir "$buildDir/asciidoc/epub3"
+    outputOptions {
+        backends 'epub3'
+    }
 }
 
 pdf.shouldRunAfter html

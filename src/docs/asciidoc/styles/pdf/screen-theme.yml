@@ -29,7 +29,7 @@ font:
 page:
   background_color: ffffff
   layout: portrait
-  margin: [0.5in, 0.67in, 0.67in, 0.67in]
+  margin: [0.67in, 0.67in, 0.67in, 0.67in]
   size: LETTER
 base:
   align: justify
@@ -95,22 +95,23 @@ heading:
   margin_bottom: $vertical_rhythm * 0.8
 title_page:
   align: center
-  # hide text by default
-  font_color: ffffff
   font_family: Akkurat
   font_style: bold
+  font_color: 181818
+  logo:
+    image: image:infoq.png[pdfwidth=40%]
+    top: 27%
   title:
-    top: 10%
-    font_size: $heading_h1_font_size * 2
-    font_color: 181818
-    text_transform: uppercase
+    top: 20%
+    font_size: $heading_h1_font_size * 1.4
     line_height: 1.25
   authors:
-    margin_top: 445.0
-    font_size: $heading_h1_font_size
-    font_color: 181818
+    margin_top: 215
+    font_size: $heading_h2_font_size * 1.25
   revision:
-    margin_top: 0
+    delimiter: '  |  '
+    margin_top: 10
+    font_size: $heading_h3_font_size
 block:
   margin_top: 0
   margin_bottom: $vertical_rhythm
@@ -197,6 +198,7 @@ outline_list:
   # NOTE item_spacing applies to list items that do not have complex content
   item_spacing: $vertical_rhythm / 2
   #marker_font_color: 404040
+  text_align: left
 table:
   background_color: $page_background_color
   #head_background_color: <hex value>
