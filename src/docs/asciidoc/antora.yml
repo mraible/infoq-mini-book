@@ -5,6 +5,7 @@ nav:
   - nav.adoc
 asciidoc:
   attributes:
+    page-og-image: https://pbs.twimg.com/media/Du0e4qrXQAAZ6gB?format=jpg&name=medium
     book-title: My Book
     author: Your Name
     revnumber: 1.0
