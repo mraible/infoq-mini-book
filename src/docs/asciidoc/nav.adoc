@@ -1,5 +1,6 @@
 * xref:dedication.adoc[]
-* xref:acknowledgements.adoc[]
+* xref:colophon.adoc[]
+* xref:acknowledgments.adoc[]
 * xref:preface.adoc[]
 * xref:introduction.adoc[]
 * xref:chapter1.adoc[]
