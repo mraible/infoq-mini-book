@@ -1,8 +1,8 @@
 name: ROOT
 title: My Book
-version: master
+version: ~
 nav:
-  - nav.adoc
+  - modules/ROOT/nav.adoc
 asciidoc:
   attributes:
     page-og-image: https://pbs.twimg.com/media/Du0e4qrXQAAZ6gB?format=jpg&name=medium
