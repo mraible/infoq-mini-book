@@ -34,7 +34,6 @@
     "browser-sync": "2.27.7",
     "chokidar": "3.5.3",
     "concurrently": "7.0.0",
-    "mini-book-site-generator": "git+https://github.com/Mogztter/mini-book-site-generator.git#main",
     "nodemon": "2.0.15"
   }
 }
