@@ -1,6 +1,6 @@
 const chokidar = require('chokidar')
-const bs = require("browser-sync").create()
-const generator = require('mini-book-site-generator')
+const bs = require('browser-sync').create()
+const generator = require('@antora/site-generator')
 const Lock = require('./lock.js')
 const processorLock = new Lock()
 
