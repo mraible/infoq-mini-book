@@ -106,5 +106,4 @@ Your site should take less than a minute to deploy, depending on the size of you
 
 == Netlify Preview
 
-This repository is using a `netlify.toml` configuration file to build and publish the static site using https://www.netlify.com/[Netlify].
-You can see the result at: https://infoq-mini-book.netlify.app/.
+This repository is using a `netlify.toml` configuration file to build and publish the static site to Netlify. You can see the result at: https://infoq-mini-book.netlify.app/.
