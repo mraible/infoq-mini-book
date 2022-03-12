@@ -89,7 +89,22 @@ The benefit of the release npm script is that the version will be updated automa
 
 Note that in order for the release npm script to work, you'll need to make sure that a `GITHUB_TOKEN` environment variable is available, as explained in https://github.com/release-it/release-it/blob/master/docs/environment-variables.md[release-it's documentation].
 
+
+== Deploy to Netlify
+
+To deploy this repository to https://www.netlify.com/[Netlify], create an account and log in.
+
+. Select **New site from Git**
+. Select your Git provider
+. Select your repository
+. Select the branch to deploy
+. Build command: `npm run build:site`
+. Publish directory: `public/`
+. Click **Deploy site**
+
+Your site should take less than a minute to deploy, depending on the size of your book.
+
 == Netlify Preview
 
 This repository is using a `netlify.toml` configuration file to build and publish the static site using https://www.netlify.com/[Netlify].
-You can see the result at: https://infoq-mini-book.netlify.app/
+You can see the result at: https://infoq-mini-book.netlify.app/.
