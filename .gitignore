@@ -103,6 +103,7 @@ Desktop.ini
 /bin/**
 /deploy/**
 dist/
+/public/
 
 ######################
 # Logs

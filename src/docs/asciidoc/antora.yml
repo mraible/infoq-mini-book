@@ -1,0 +1,15 @@
+name: ROOT
+title: My Book
+version: ~
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    page-og-image: https://pbs.twimg.com/media/Du0e4qrXQAAZ6gB?format=jpg&name=medium
+    book-title: My Book
+    author: Your Name
+    revnumber: 1.0
+    revyear: 2021
+    email: youremail@...
+    subject: Whatever
+    keywords: Something, Else

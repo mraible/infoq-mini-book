@@ -1,0 +1,5 @@
+[[chapter-1]]
+= Chapter 1
+:page-pagination: next
+
+image:infoq-jvm-2021.png[]
