@@ -33,7 +33,7 @@
     "@release-it/bumper": "3.0.1",
     "browser-sync": "2.27.9",
     "chokidar": "3.5.3",
-    "concurrently": "7.0.0",
+    "concurrently": "7.1.0",
     "nodemon": "2.0.15"
   }
 }
