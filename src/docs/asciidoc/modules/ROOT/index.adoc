@@ -19,9 +19,9 @@ endif::[]
 :lang: en
 :language: javadocript
 :experimental:
-:pdf-fontsdir: ./styles/pdf/fonts
-:pdf-stylesdir: ./styles/pdf
-:pdf-style: screen
+:pdf-fontsdir: {docdir}/styles/pdf/fonts
+:pdf-themesdir: {docdir}/styles/pdf
+:pdf-theme: screen
 ifndef::ebook-format[:leveloffset: 1]
 
 [colophon#colophon%nonfacing]
