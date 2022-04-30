@@ -68,8 +68,7 @@ task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
 }
 
 task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
-    attributes attrs + ['media' : 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress']
-    attrs.remove('source-highlighter')
+    attributes attrs + ['media': 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress', 'source-highlighter': '']
     outputDir "$buildDir/asciidoc/pdf-prepress"
     outputOptions {
         backends 'pdf'
@@ -78,7 +77,7 @@ task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress pr
 }
 
 task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
-    attributes attrs + ['pdfmarks': '', 'source-highlighter': 'rouge']
+    attributes attrs + ['pdfmarks': '']
     outputDir "$buildDir/asciidoc/pdf-screen"
     outputOptions {
         backends 'pdf'
@@ -86,7 +85,9 @@ task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
     }
 }
 
+// Rouge doesn't work in EPUB, so use CodeRay
 task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
+    attributes attrs + ['source-highlighter': 'coderay']
     outputDir "$buildDir/asciidoc/epub3"
     outputOptions {
         backends 'epub3'
