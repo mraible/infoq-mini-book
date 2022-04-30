@@ -15,7 +15,7 @@
   "private": true,
   "scripts": {
     "build": "bash ./gradlew all",
-    "build:site": "antora --html-url-extension-style=indexify --url=https://infoq-mini-book.netlify.app site.yml",
+    "build:site": "antora --html-url-extension-style=indexify site.yml",
     "clean": "bash ./gradlew clean",
     "serve": "npm run watch:all",
     "setup": "npm install && npm run build",

@@ -1,3 +1,3 @@
 [build]
   publish = "public"
-  command = "npm run build:site"
+  command = "npm run build:site -- --url=https://infoq-mini-book.netlify.app"
