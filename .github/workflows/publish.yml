@@ -13,6 +13,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
+          cache: 'gradle'
       - name: Build book
         run: npm run setup
       - name: Rename files
