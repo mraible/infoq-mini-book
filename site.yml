@@ -8,8 +8,9 @@ content:
       branches: HEAD
       start_path: src/docs/asciidoc
 ui:
+  supplemental_files: ./src/docs/supplemental-ui
   bundle:
-    url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.2.2/ui-bundle.zip
+    url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.3.2/ui-bundle.zip
     snapshot: true
 output:
   dir: ./public
