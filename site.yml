@@ -7,6 +7,7 @@ content:
     - url: '.'
       branches: HEAD
       start_path: src/docs/asciidoc
+      edit_url: '{web_url}/edit/main/{path}'
 ui:
   supplemental_files: ./src/docs/supplemental-ui
   bundle:
