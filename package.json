@@ -31,7 +31,7 @@
     "@antora/cli": "~3.1",
     "@antora/site-generator": "^3.1.2",
     "@release-it/bumper": "4.0.2",
-    "browser-sync": "2.27.12",
+    "browser-sync": "2.28.3",
     "chokidar": "3.5.3",
     "concurrently": "7.6.0",
     "nodemon": "2.0.21"
