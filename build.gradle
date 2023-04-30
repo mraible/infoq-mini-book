@@ -23,6 +23,11 @@ version = file('version.txt').text.trim()
 asciidoctorj {
     version = '2.5.7'
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
+    modules {
+        pdf {
+            version '2.3.7'
+        }
+    }
 }
 
 import org.asciidoctor.gradle.jvm.AsciidoctorTask
