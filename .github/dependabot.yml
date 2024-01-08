@@ -8,6 +8,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      asciidoctor:
+        patterns:
+          - 'org.asciidoctor.jvm.*'
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
