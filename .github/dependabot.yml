@@ -11,7 +11,7 @@ updates:
     groups:
       asciidoctor:
         patterns:
-          - 'org.asciidoctor.jvm.*'
+          - "org.asciidoctor.jvm.*"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
