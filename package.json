@@ -32,7 +32,7 @@
     "@antora/site-generator": "^3.1.7",
     "@release-it/bumper": "6.0.1",
     "browser-sync": "3.0.2",
-    "chokidar": "3.5.3",
+    "chokidar": "3.6.0",
     "concurrently": "8.2.2",
     "nodemon": "3.0.3"
   }
