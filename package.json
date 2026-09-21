@@ -30,7 +30,7 @@
   "devDependencies": {
     "@antora/cli": "~3.2",
     "@antora/site-generator": "^3.2.0",
-    "@release-it/bumper": "8.0.0",
+    "@release-it/bumper": "8.0.1",
     "browser-sync": "3.0.4",
     "chokidar": "5.0.0",
     "concurrently": "10.0.5",
