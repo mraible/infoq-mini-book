@@ -1,9 +1,9 @@
 plugins {
     id 'java'
-    id 'org.asciidoctor.jvm.gems' version '4.0.5'
-    id 'org.asciidoctor.jvm.convert' version '4.0.5' apply false
-    id 'org.asciidoctor.jvm.pdf' version '4.0.5'
-    id 'org.asciidoctor.jvm.epub' version '4.0.5'
+    id 'org.asciidoctor.jvm.gems.classic' version '5.0.3'
+    id 'org.asciidoctor.jvm.convert.classic' version '5.0.3' apply false
+    id 'org.asciidoctor.jvm.pdf.classic' version '5.0.3'
+    id 'org.asciidoctor.jvm.epub.classic' version '5.0.3'
     id 'se.patrikerdes.use-latest-versions' version '0.2.19'
     id 'com.github.ben-manes.versions' version '0.64.0'
 }
@@ -21,11 +21,14 @@ repositories {
 version = file('version.txt').text.trim()
 
 asciidoctorj {
-    version = '2.5.7'
+    version = '3.0.1'
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     modules {
         pdf {
             version '2.3.7'
+        }
+        epub {
+            version '1.5.1'
         }
     }
 }
