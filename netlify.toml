@@ -1,3 +1,6 @@
 [build]
   publish = "public"
   command = "npm run build:site -- --url=https://infoq-mini-book.netlify.app"
+
+[build.environment]
+  NODE_VERSION = "24"
