@@ -72,7 +72,7 @@ vertical_spacing: $vertical_rhythm
 link:
   font_color: 428bca
 # literal is currently used for inline monospaced in prose and table cells
-literal:
+codespan:
   font_color: b12146
   font_family: M+ 1mn
 heading:
@@ -134,7 +134,7 @@ admonition:
   column_rule_color: $base_border_color
   column_rule_width: $base_border_width
   padding: [0, $horizontal_rhythm, 0, $horizontal_rhythm]
-blockquote:
+quote:
   font_color: $base_font_color
   font_size: $base_font_size_large
   border_color: $base_border_color
@@ -193,7 +193,7 @@ description_list:
   term_font_style: italic
   term_spacing: $vertical_rhythm / 4
   description_indent: $horizontal_rhythm * 1.25
-outline_list:
+list:
   indent: $horizontal_rhythm * 1.5
   # NOTE item_spacing applies to list items that do not have complex content
   item_spacing: $vertical_rhythm / 2

@@ -5,7 +5,7 @@ plugins {
     id 'org.asciidoctor.jvm.pdf.classic' version '5.0.3'
     id 'org.asciidoctor.jvm.epub.classic' version '5.0.3'
     id 'se.patrikerdes.use-latest-versions' version '0.2.19'
-    id 'com.github.ben-manes.versions' version '0.66.0'
+    id 'io.github.ben-manes.versions' version '0.66.0'
 }
 
 repositories {
@@ -25,7 +25,7 @@ asciidoctorj {
     requires file('src/main/ruby/asciidoctor-pdf-extensions.rb')
     modules {
         pdf {
-            version '2.3.7'
+            version '2.3.19'
         }
         epub {
             version '1.5.1'
@@ -56,25 +56,28 @@ tasks.withType(AsciidoctorTask) { task ->
     }
 }
 
-task html(type: AsciidoctorTask, description: 'Generates single page HTML') {
-    outputDir "$buildDir/asciidoc/html5"
+tasks.register('html', AsciidoctorTask) {
+    description = 'Generates single page HTML'
+    outputDir = layout.buildDirectory.dir('asciidoc/html5')
     outputOptions {
         backends 'html5'
     }
 }
 
-task prepress(type: AsciidoctorTask, description: 'Generates PDF for prepress printing') {
+tasks.register('prepress', AsciidoctorTask) {
+    description = 'Generates PDF for prepress printing'
     attributes attrs + ['media': 'prepress', 'pdfmarks': '', 'pdf-theme': 'prepress', 'source-highlighter': '']
-    outputDir "$buildDir/asciidoc/pdf-prepress"
+    outputDir = layout.buildDirectory.dir('asciidoc/pdf-prepress')
     outputOptions {
         backends 'pdf'
         setSeparateOutputDirs false
     }
 }
 
-task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
+tasks.register('pdf', AsciidoctorTask) {
+    description = 'Generates PDF for download'
     attributes attrs + ['pdfmarks': '']
-    outputDir "$buildDir/asciidoc/pdf-screen"
+    outputDir = layout.buildDirectory.dir('asciidoc/pdf-screen')
     outputOptions {
         backends 'pdf'
         setSeparateOutputDirs false
@@ -82,18 +85,21 @@ task pdf(type: AsciidoctorTask, description: 'Generates PDF for download') {
 }
 
 // Rouge doesn't work in EPUB, so use CodeRay
-task epub(type: AsciidoctorTask, description: 'Generates EPUB3') {
+tasks.register('epub', AsciidoctorTask) {
+    description = 'Generates EPUB3'
     attributes attrs + ['source-highlighter': 'coderay']
-    outputDir "$buildDir/asciidoc/epub3"
+    outputDir = layout.buildDirectory.dir('asciidoc/epub3')
     outputOptions {
         backends 'epub3'
     }
 }
 
-pdf.shouldRunAfter html
-prepress.shouldRunAfter pdf
-epub.shouldRunAfter prepress
+tasks.named('pdf') { shouldRunAfter 'html' }
+tasks.named('prepress') { shouldRunAfter 'pdf' }
+tasks.named('epub') { shouldRunAfter 'prepress' }
 
-task all(dependsOn: ['html', 'pdf', 'prepress', 'epub'])
+tasks.register('all') {
+    dependsOn 'html', 'pdf', 'prepress', 'epub'
+}
 
 defaultTasks 'all'
