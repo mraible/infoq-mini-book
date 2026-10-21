@@ -4,7 +4,7 @@
 :email:  youremail@...
 :revnumber: 1.0
 :revdate: {docdate}
-:revyear: 2020
+:revyear: 2021
 :subject: Whatever
 :keywords: Something, Else
 :doctype: book
@@ -17,7 +17,7 @@ endif::[]
 :toc:
 :icons: font
 :lang: en
-:language: javadocript
+:language: javascript
 :experimental:
 :pdf-fontsdir: {docdir}/styles/pdf/fonts
 :pdf-themesdir: {docdir}/styles/pdf

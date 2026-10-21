@@ -10,7 +10,7 @@ InfoQ mini-books are designed to be concise, intending to serve technical archit
 
 == What you need for this book
 
-To try code samples in this book, you will need a computer running an up-to-date operating system (Windows, Linux, or Mac OS X). You will need Node.js and Java installed. The book code was tested against Node.js v0.12 and JDK 8, but newer versions should also work.
+To try code samples in this book, you will need a computer running an up-to-date operating system (Windows, Linux, or Mac OS X). You will need Node.js and Java installed. The book code was tested against Node.js 24 and Java 21, but newer versions should also work.
 
 == Conventions
 
@@ -91,7 +91,7 @@ Finally, this text shows what a quote looks like:
 We always welcome feedback from our readers. Let us know what you thought about this book — what you liked or disliked. Reader feedback helps us develop titles that deliver the most value to you.
 
 [.text-left]
-To send us feedback, e-mail us at feedback@infoq.com, send a tweet to @jhipster_book, or post a question on Stack Overflow using the "`jhipster`" tag.
+To send us feedback, e-mail us at feedback@infoq.com, or send a message to @your_handle.
 
 [.text-left]
 If you're interested in writing a mini-book for InfoQ, see http://www.infoq.com/minibook-guidelines.
