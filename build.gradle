@@ -5,7 +5,7 @@ plugins {
     id 'org.asciidoctor.jvm.pdf.classic' version '5.1.0'
     id 'org.asciidoctor.jvm.epub.classic' version '5.1.0'
     id 'se.patrikerdes.use-latest-versions' version '0.2.19'
-    id 'io.github.ben-manes.versions' version '0.66.0'
+    id 'io.github.ben-manes.versions' version '0.67.0'
 }
 
 repositories {
