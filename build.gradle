@@ -87,7 +87,8 @@ tasks.register('pdf', AsciidoctorTask) {
 // Rouge doesn't work in EPUB, so use CodeRay
 tasks.register('epub', AsciidoctorTask) {
     description = 'Generates EPUB3'
-    attributes attrs + ['source-highlighter': 'coderay']
+    // Rouge highlights TypeScript, shell and Kotlin, which CodeRay doesn't; the EPUB converter defaults to its black-and-white style
+    attributes attrs + ['rouge-style': 'github']
     outputDir = layout.buildDirectory.dir('asciidoc/epub3')
     outputOptions {
         backends 'epub3'
