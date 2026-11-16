@@ -1,4 +1,14 @@
 require 'asciidoctor-pdf' unless Asciidoctor::Converter.for 'pdf'
+require 'rouge'
+
+# Rouge's github style, except that tokens Rouge can't parse print like the text around them. The github style gives
+# them a red background, which marks valid code as broken: listing fragments, framework syntax such as Angular's
+# #name="ngModel", and syntax Rouge doesn't know, such as Kotlin's star projection (<*>).
+# The PDF and EPUB use it through the rouge-style attribute in build.gradle.
+class BookRougeTheme < Rouge::Themes::Github
+  name 'book'
+  style Rouge::Token::Tokens::Error, {}
+end
 
 class AsciidoctorPDFExtensions < (Asciidoctor::Converter.for 'pdf')
   register_for 'pdf'
