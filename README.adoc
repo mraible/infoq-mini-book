@@ -28,6 +28,8 @@ To generate a static site using Antora, run the following command:
 
  npm run build:site
 
+The site highlights code with `src/docs/supplemental-ui/js/vendor/highlight.js`, which replaces the UI bundle's copy so TypeScript, SCSS and bare shell commands are highlighted too. To change its languages, edit and run `scripts/build-highlight.sh`.
+
 == Sweet Authoring Experience
 
 If you'd like a very pleasant authoring experience, the project provides build files that make it possible. First of all,
